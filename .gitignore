@@ -1,0 +1,15 @@
+# IDE / build
+.idea/
+.vscode/
+cmake-build-*/
+build/
+out/
+
+# compiled / binaries
+*.exe
+*.o
+*.obj
+*.out
+
+# misc
+.DS_Store
