@@ -6,26 +6,32 @@
 |---|---|---|---|---|---|---|---|---|
 | 2026-09-25 | Find First and Last Position | LeetCode 34（旧 Arithmetic） | 二分 | 未记录 | 否·参考过答案 | C | 缺 return（未返回结果）；边界二分理解需看答案 | 09-28 / 10-02 |
 | 2026-09-25 | 两数之和 | LeetCode 1（旧 Arithmetic） | 哈希 | ~30min | 否·提示 hash map | C | 兜底 return 缺失（重复错误）；误改 CMakeLists | 09-28 / 10-02 |
-| 2026-09-25 | 删除有序数组中的重复项 | LeetCode 26（旧 Arithmetic） | 双指针·快慢指针 | ~35min | 否·Hint 2 | C | off-by-one（fast<size-1 丢末尾）；fast++ 顺序错误致越界读；range-for 值拷贝 | 09-28 / 10-02 |
+| 2026-09-25 | 删除有序数组中的重复项 | LeetCode 26（旧 Arithmetic） | 双指针·快慢 | ~35min | 否·Hint 2 | C | off-by-one；fast++ 顺序错误致越界读；range-for 值拷贝 | 09-28 / 10-02 |
+| 2026-09-26 | sort 热身（升序/降序输出） | 自命题 | 排序·STL sort | ~10min | 是（降序参数有轻微提示） | D | 两行输出未加换行（已改） | 09-28 |
+| 2026-09-26 | 盛最多水的容器 | LeetCode 11（旧 Arithmetic） | 双指针·相向 | ~40min | 否·给方向提示 | C | 参数值拷贝（已改 const&）；缺 include；正确性证明不会（已补讲） | 09-28 / 10-02 |
+| 2026-09-26 | 有序数组两数之和 | LeetCode 167 | 双指针·相向 | ~30min | 否·给方向提示 | C | 首版非相向：right 重置致 O(n²)+漏解；兜底 return 缺失（第 3 次） | 09-28 / 10-02 |
 
-注：三题均按竞赛 stdin/stdout 格式重写并本地多组测试通过。
+注：全部按竞赛 stdin/stdout 格式，多组测试验证通过。
 
 ## 待复习队列
 
 | 复习日期 | 题目 | 要求 |
 |---|---|---|
 | 2026-09-28 | search_range / two_sum / remove_duplicates | 不看任何资料重写，各 10 分钟内 AC |
-| 2026-10-02 | 同上三题 | 默写，通过则升 E |
+| 2026-09-28 | max_area / two_sum_ii | 不看任何资料重写，各 10 分钟内 AC |
+| 2026-10-02 | 上述五题 | 默写，通过则升 E |
 
 ## 已暴露待补的训练点
 
-- vector 的 `sort(v.begin(), v.end())` 基本用法（下次热身）
-- pre-sort + 双指针解法（two_sum 第二解，sort 熟悉后做）
-- signed/unsigned 比较警告 `int i < v.size()`
-- 自己设计边界测试的习惯：n=1 / 全部相同 / 完全没有重复
-- 快慢指针的固定节奏：先读、再写、后移动指针
+- 前缀和（下一阶段，尚未接触）
+- string 的使用（尚未接触）
+- 双指针 vs 哈希的取舍：无序→哈希；有序→双指针（O(1) 空间）
+- 相向双指针的正确性论证：每步淘汰一个不可能贡献更优解的端点；指针单向不回退 = O(n)
+- 函数参数：只读大容器用 `const T&`；原地修改用 `T&`
+- 任何非 void 函数：所有路径必须有 return（已 3 次）
+- 自测习惯：正例之外必须造反例（解在数组后部、边界输入）
 
 ## 环境备注
 
-- 新增题目文件后：CLion → 右键 CMakeLists.txt → Reload CMake Project；不要手动改 CMakeLists 的 add_executable
+- 新增题目文件后：CLion → 右键 CMakeLists.txt → Reload CMake Project；不要手动改 CMakeLists
 - 习惯：编译零警告再运行
