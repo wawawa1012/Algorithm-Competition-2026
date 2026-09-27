@@ -3,28 +3,22 @@
 //
 #include <vector>
 #include <iostream>
+#include <unordered_map>
 using namespace std;
 class solution
 {
 public:
     int subarray_sum(const vector<int>& nums,int target)
     {
-        int res=0;
-        vector<int> prefix_sum(nums.size()+1);
-        prefix_sum[0]=0;
-        prefix_sum[1]=nums[0];
-        for (int i=2;i<nums.size()+1;i++)
+        int sum=0,res=0;
+        unordered_map<long long, int> cnt;
+        cnt[0]=1;
+        for (int j=0;j<nums.size();j++)
         {
-            prefix_sum[i]=nums[i-1]+prefix_sum[i-1];
+            sum+=nums[j];
+            res+=cnt[sum-target];
+            cnt[sum]+=1;
         }
-        int l=0,r=0,sum=prefix_sum[r+1]-prefix_sum[l];
-        while (sum<target)
-        {
-            r++;
-            sum=prefix_sum[r+1]-prefix_sum[l];
-        }
-        l++;
-        if (sum==target) res++;
         return res;
     }
 };
@@ -39,5 +33,5 @@ int main()
     }
 
     solution s;
-
+    cout<<s.subarray_sum(nums,k);
 }
