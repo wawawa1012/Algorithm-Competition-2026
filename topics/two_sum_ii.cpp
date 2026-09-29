@@ -1,10 +1,12 @@
 //
-// Created by A on 2026/9/26.
+// Created by A on 2026/9/28.
 //
 #include <iostream>
 #include <vector>
 using namespace std;
-class solution{
+
+class solution
+{
 public:
     vector<int> two_sum(const vector<int>& nums,int target)
     {
@@ -19,6 +21,7 @@ public:
         return {-1,-1};
     }
 };
+
 int main()
 {
     int n,target;
@@ -30,9 +33,6 @@ int main()
     }
     solution s;
     vector<int> res=s.two_sum(nums,target);
-    for (int num:res)
-    {
-        cout<<num<<" ";
-    }
+    for (int val:res)   cout<<val<<" ";
     return 0;
 }

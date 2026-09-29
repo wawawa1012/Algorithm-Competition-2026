@@ -1,40 +1,38 @@
 //
-// Created by A on 2026/9/25.
+// Created by A on 2026/9/27.
 //
-#include <chrono>
 #include <iostream>
 #include <vector>
 using namespace std;
 class solution
 {
 public:
-    vector<int> searchRange(vector<int> n,int t)
+    vector<int> search_range(const vector<int>& nums,int target)
     {
         int start=-1,end=-1;
-
-        int left=0,right=n.size()-1;
-        while (left<=right)
+        int l=0,r=nums.size()-1;
+        while (l<=r)
         {
-            int mid=left+(right-left)/2;
-            if (t==n[mid])
+            int mid=l+(r-l)/2;
+            if (nums[mid]==target)
             {
                 start=mid;
-                right=mid-1;
+                r=mid-1;
             }
-            else if (t>n[mid])  left=mid+1;
-            else right=mid-1;
+            else if (nums[mid]>target) r=mid-1;
+            else l=mid+1;
         }
-        left=0,right=n.size()-1;
-        while (left<=right)
+        l=0,r=nums.size()-1;
+        while (l<=r)
         {
-            int mid=left+(right-left)/2;
-            if (t==n[mid])
+            int mid=l+(r-l)/2;
+            if (nums[mid]==target)
             {
                 end=mid;
-                left=mid+1;
+                l=mid+1;
             }
-            else if (t>n[mid])  left=mid+1;
-            else right=mid-1;
+            else if (nums[mid]>target) r=mid-1;
+            else l=mid+1;
         }
         return {start,end};
     }
@@ -44,15 +42,12 @@ int main()
     int n,target;
     cin>>n>>target;
     vector<int> nums(n);
-    for (int i=0;i<n;i++)
+    for (int& num:nums)
     {
-        cin>>nums[i];
+        cin>>num;
     }
     solution s;
-    vector<int> v=s.searchRange(nums,target);
-    for (int x : v)
-    {
-        cout<<x<<" ";
-    }
+    vector<int> res=s.search_range(nums,target);
+    for (int& val:res) cout<<val<<" ";
     return 0;
 }

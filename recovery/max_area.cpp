@@ -1,9 +1,9 @@
 //
-// Created by A on 2026/9/26.
+// Created by A on 2026/9/28.
 //
 #include <vector>
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 using namespace std;
 class solution
 {
@@ -11,16 +11,17 @@ public:
     int max_area(const vector<int>& nums)
     {
         int left=0,right=nums.size()-1;
-        int maxArea=min(nums[left],nums[right])*(right-left);
+        int res=(right-left)*min(nums[left],nums[right]);
+        while (left<right)
         {
-            while (right>left)
+            if (nums[left]<nums[right])
             {
-                if (nums[right]>nums[left]) left++;
-                else right--;
-                maxArea=max(maxArea,min(nums[left],nums[right])*(right-left));
+                left++;
             }
-            return maxArea;
+            else right--;
+            res=max((right-left)*min(nums[left],nums[right]),res);
         }
+        return res;
     }
 };
 int main()

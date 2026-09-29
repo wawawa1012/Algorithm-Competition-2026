@@ -4,38 +4,38 @@
 
 | 日期 | 题目 | 来源 | 标签 | 用时 | 独立 | 等级 | 主要错误 | 复习日期 |
 |---|---|---|---|---|---|---|---|---|
-| 2026-09-25 | Find First and Last Position | LeetCode 34（旧 Arithmetic） | 二分 | 未记录 | 否·参考过答案 | C | 缺 return（未返回结果）；边界二分理解需看答案 | 09-28 / 10-02 |
-| 2026-09-25 | 两数之和 | LeetCode 1（旧 Arithmetic） | 哈希 | ~30min | 否·提示 hash map | C | 兜底 return 缺失（重复错误）；误改 CMakeLists | 09-28 / 10-02 |
-| 2026-09-25 | 删除有序数组中的重复项 | LeetCode 26（旧 Arithmetic） | 双指针·快慢 | ~35min | 否·Hint 2 | C | off-by-one；fast++ 顺序错误致越界读；range-for 值拷贝 | 09-28 / 10-02 |
-| 2026-09-26 | sort 热身（升序/降序输出） | 自命题 | 排序·STL sort | ~10min | 是（降序参数有轻微提示） | D | 两行输出未加换行（已改） | 09-28 |
-| 2026-09-26 | 盛最多水的容器 | LeetCode 11（旧 Arithmetic） | 双指针·相向 | ~40min | 否·给方向提示 | C | 参数值拷贝（已改 const&）；缺 include；正确性证明不会（已补讲） | 09-28 / 10-02 |
-| 2026-09-26 | 有序数组两数之和 | LeetCode 167 | 双指针·相向 | ~30min | 否·给方向提示 | C | 首版非相向：right 重置致 O(n²)+漏解；兜底 return 缺失（第 3 次） | 09-28 / 10-02 |
-| 2026-09-26 | 区间和查询 | 自命题 | 前缀和 | ~30min | 否·给方向提示 | C | 首次结构错误：每次查询重建前缀和（伪优化 O(nq)）；int 溢出（已改 long long） | 09-28 / 10-02 |
-| 2026-09-27 | 和为 K 的子数组 | LeetCode 560（旧 Arithmetic） | 前缀和+哈希 | 未记录 | 否·伪代码+语法对照 | B | 等价变形（pre[i]=pre[j]-k）答错；不知道哈希表存什么 | 09-30 |
-| 2026-09-27 | 有效的括号 | LeetCode 20 | 栈 | ~30min | 否·语法速查 | C | 空栈 top() 崩溃；自测漏"右括号开头"反例（提示后修复并简化） | 09-30 |
-| 2026-09-27 | 逆波兰表达式求值 | LeetCode 150（旧 Arithmetic） | 栈 | 未记录 | 否·借助工具理结构 | B | main 未调用函数无输出；自述"写的时候乱" | 09-30 |
+| 09-25 | search_range | LeetCode 34 | 二分 | — | 曾参考 | **D**（09-27 复习升） | 初学缺 return；边界二分需理解 | 10-02 复查 |
+| 09-25 | two_sum | LeetCode 1 | 哈希 | ~30min | 曾提示 | **D**（09-27 复习升） | 初学兜底 return 缺失 | 10-02 复查 |
+| 09-25 | remove_duplicates | LeetCode 26 | 双指针·快慢 | ~35min | 否 | C | off-by-one；复习时抄写、main 漏 `nums(n)` | 09-30 重写 |
+| 09-26 | sort_warmup | 自命题 | STL sort | ~10min | 是 | **D** | 输出未分行（已改） | — |
+| 09-26 | max_area | LeetCode 11 | 双指针·相向 | ~40min | 曾提示 | **D**（09-28 复习升） | 初学值拷贝；正确性证明不会 | 10-03 复查 |
+| 09-26 | two_sum_ii | LeetCode 167 | 双指针·相向 | ~30min | 曾提示 | **D**（09-28 复习升） | 初学 right 重置 O(n²)；复习漏 const | 10-03 复查 |
+| 09-26 | prefix_sum | 自命题 | 前缀和 | ~30min | 曾提示 | C | 复习忘 long long（int 溢出） | 09-30 重写 |
+| 09-27 | subarray_sum | LeetCode 560 | 前缀和+哈希 | — | 伪代码 | B | 等价变形不懂；哈希表存什么不懂 | 09-30 重写 |
+| 09-27 | valid_parentheses | LeetCode 20 | 栈 | ~30min | 语法速查 | C | 空栈 top 崩溃；漏最刁钻反例 | 09-30 重写 |
+| 09-27 | eval_rpn | LeetCode 150 | 栈 | — | 工具 | B | main 没调用函数；"写的时候乱" | 09-30 重写 |
+| 09-28~29 | maze_bfs | 自命题 | BFS·队列 | 很长 | 否 | B | 用递归当 BFS（概念错）；漏 dist==-1 访问检查 | 10-04 重写 |
 
-注：全部按竞赛 stdin/stdout 格式，多组测试验证通过（eval_rpn 7 组、valid_parentheses 8 组、subarray_sum 4 组）。
+注：全部按竞赛 stdin/stdout 格式，多组测试验证通过。已归档的 v2 文件即最新版本。
 
 ## 待复习队列
 
 | 复习日期 | 题目 | 要求 |
 |---|---|---|
-| 2026-09-28 | search_range / two_sum / remove_duplicates / max_area / two_sum_ii / prefix_sum | 不看任何资料重写，各 10 分钟内 AC |
-| 2026-09-30 | subarray_sum / valid_parentheses / eval_rpn | 不看任何资料重写，各 10 分钟内 AC |
-| 2026-10-02 | 上述九题 | 默写，通过则升 E |
+| 2026-09-30 | subarray_sum / valid_parentheses / eval_rpn / remove_duplicates / prefix_sum | 不看任何资料重写，各 10 分钟内 AC |
+| 2026-10-02 | search_range / two_sum | 复查（通过升 E） |
+| 2026-10-03 | max_area / two_sum_ii | 复查（通过升 E） |
+| 2026-10-04 | maze_bfs / prefix_sum / remove_duplicates | 复查 |
 
 ## 已暴露待补的训练点
 
-- **"写的时候乱"**：落笔前先用 3-5 行注释/伪代码列步骤，再填 C++（当前最大短板）
-- main 与函数的"接线"：写完检查"读入 → 调用 → 输出"三件套
-- 栈：空栈检查（top/pop 前）；pop 顺序（先弹右操作数）；"push 对应右括号"简化技巧
-- long long 习惯：结果可能超过 2×10^9 时一律 long long
-- 预处理结构："一次构建，多次查询"
-- 滑窗要求元素非负（单调性）；双指针/哈希/滑窗的适用条件
+- **BFS 标准结构**：队列 + while + dist 数组 + 入队前检查未访问；递归 = DFS，≠ BFS
+- **"写的时候乱"**：落笔前先用 3-5 行注释/伪代码列步骤（当前最大短板）
+- 死代码残留：写完扫一眼"有没有没用到的东西"（int res、多余的 prefix 数组）
+- long long：结果可能超过 2×10^9 时一律 long long（复习时又忘）
+- string / stack / queue / unordered_map 的使用（已接触，需巩固）
+- 自测习惯：造反例，最短输入往往最刁钻（`)`、n=1、全相同、封死的 E）
 - 任何非 void 函数：所有路径必须有 return（已 3 次）
-- 自测习惯：正例之外必须造反例；最刁钻的输入往往最短（`)`、n=1、全相同）
-- string / stack / unordered_map 的使用（已接触，需巩固）
 
 ## 环境备注
 
