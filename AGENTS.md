@@ -104,7 +104,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-10-09
-- 累计 13 题已验收：D×6（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit）、C×4（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 14 题已验收：D×6（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit）、C×5（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 待办：
   1. `valid_parentheses`（10-08 提示后修正控制流程，7 组逻辑测试通过，已归档；维持 C，后续用 `_r2.cpp` 独立重写；本次已主动检查空栈）
@@ -112,5 +112,6 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   3. `remove_duplicates_r2.cpp`（未建；病灶：把"覆盖"理解成"删除"，曾两次出错 + 一次抄写）
   4. `max_consecutive_ones`（10-08 新题，首元素未计入最大值，提示后修正；9 组测试通过，C）
   5. `max_profit`（10-09 无提示独立完成，8 组测试通过，D；10-16 复查，间隔满 7 天仍能独立快速完成再升 E）
-- 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08~09 本轮完成一题复习、两道新题，已收尾
+  6. `sorted_squares`（10-09 新题，两段归并，j=0 与全负数组边界经提示修正，9 组测试通过，C；学员希望简化代码，下一步可去掉负数副本 a）
+- 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
 - 复习队列详见 `training-log.md`
