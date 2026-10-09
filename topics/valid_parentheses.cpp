@@ -1,19 +1,17 @@
 //
-// Created by A on 2026/9/27.
+// Created by A on 2026/10/4.
 //
-#include <string>
-#include <stack>
 #include <iostream>
-
+#include <stack>
 using namespace std;
 
 class solution
 {
 public:
-    bool valid_parentheses(string s)
+    bool is_valid(const string& strs)
     {
         stack<char> st;
-        for (char& c : s)
+        for (char c:strs)
         {
             switch (c)
             {
@@ -26,25 +24,21 @@ public:
             case '(':
                 st.push(')');
                 break;
-            }
-            if (c == '}'|| c == ']' || c == ')')
-            {
-                if (!st.empty()&&st.top() == c)
-                    st.pop();
+            default:
+                if (!st.empty()&&st.top()==c) st.pop();
                 else return false;
             }
         }
-        if (st.empty()) return true;
-        return false;
+        return st.empty();
     }
 };
-
 int main()
 {
-    string s;
-    cin >> s;
-    solution so;
-    if (so.valid_parentheses(s))cout << "yes";
-    else cout << "no";
+    string strs;
+    cin>>strs;
+    solution s ;
+    if (s.is_valid(strs))
+        cout<<"YES";
+    else cout<<"NO";
     return 0;
 }
