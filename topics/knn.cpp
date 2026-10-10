@@ -12,10 +12,10 @@ public:
     int knn(int k,const vector<pair<pair<int,int>,int>>& pointSet,int x,int y)
     {
         int n=pointSet.size();
-        vector<pair<pair<pair<int,int>,int>,int>> dist(n);
+        vector<pair<int,int>> dist(n);
         for (int i=0;i<n;i++)
         {
-            dist[i].first=pointSet[i];
+            dist[i].first=pointSet[i].second;
             int px=pointSet[i].first.first;
             int py=pointSet[i].first.second;
             dist[i].second=(x-px)*(x-px)+(y-py)*(y-py);
@@ -24,18 +24,13 @@ public:
         {
             return a.second<b.second;
         });
-        vector<int> cl;//存class
-        for (int i=0;i<k;i++)
+        int count = 0;
+        for (int i = 0; i < k; ++i)
         {
-            cl.push_back(dist[i].first.second);
+            if (dist[i].first == 1)
+                ++count;
         }
-        int count=0;
-        for (int& c:cl)
-        {
-            if (c==1) count++;
-        }
-        if (count>k/2) return 1;
-        else return 0;
+        return count > k / 2;
     }
 };
 
