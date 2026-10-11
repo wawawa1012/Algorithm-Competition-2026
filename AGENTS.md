@@ -104,7 +104,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-10-11
-- 累计 16 题已验收：D×7（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit、max_window_sum）、C×6（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 17 题已验收：D×8（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit、max_window_sum、min_subarray_len）、C×6（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 待办：
@@ -116,7 +116,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   6. `sorted_squares`（10-09 新题，两段归并，j=0 与全负数组边界经提示修正，9 组测试通过，C；学员希望简化代码，下一步可去掉负数副本 a）
   7. `knn`（10-10~11 课堂算法练习，距离截断及简化后的 pair 投票字段取错，经提示修正；dist 仅存类别与距离平方，直接统计前 k 个类别；最终 8 组测试通过、编译零警告，C，已收尾）
   8. `max_window_sum`（10-11 无提示独立完成固定窗口和，主动使用 long long，10 组测试通过，D；10-18 复查）
-  9. `min_subarray_len`（10-11 下一题，正整数数组中总和至少 S 的最短连续子数组，固定窗口到可变窗口的专题延伸；尚未验收）
+  9. `min_subarray_len`（10-11 无提示独立完成可变窗口，10 组测试通过、编译零警告，D；10-18 复查）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-11 收尾 KNN 后继续完成 max_window_sum 新题；范围及测试证据见训练日志。
+- 最近训练：10-11 收尾 KNN 后独立完成 max_window_sum、min_subarray_len 两道窗口新题；下一轮安排不标分类的混合限时题，检查方法识别。范围及测试证据见训练日志。
 - 复习队列详见 `training-log.md`
