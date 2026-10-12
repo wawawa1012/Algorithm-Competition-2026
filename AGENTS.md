@@ -85,7 +85,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 - 任何非 void 函数，所有路径必须有 return（已犯 3 次，见 `mistakes/missing-return.md`）
 - 涉及下标条件注意 off-by-one（见 `mistakes/off-by-one.md`）
 - 结果可能超过 2×10^9 时一律 `long long`
-- 预处理 = "一次构建，多次查询"（不要每次查询重建）
+- 预处理 = "一次构建，多次查询"（不要每次查询重建；见 `mistakes/preprocessing-and-query.md`）
 - 写完代码扫一眼有没有死代码残留（无用变量、构建了没用的数组）
 
 ## 5. 沟通风格
@@ -104,7 +104,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-10-12
-- 累计 18 题已验收：D×9（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit、max_window_sum、min_subarray_len、shopping_pair）、C×6（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 19 题已验收：D×9（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit、max_window_sum、min_subarray_len、shopping_pair）、C×7（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 待办：
@@ -118,6 +118,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   8. `max_window_sum`（10-11 无提示独立完成固定窗口和，主动使用 long long，10 组测试通过，D；10-18 复查）
   9. `min_subarray_len`（10-11 无提示独立完成可变窗口，10 组测试通过、编译零警告，D；10-18 复查）
   10. `shopping_pair`（10-12 不标分类限时训练，约 16 分钟，无提示识别排序+相向双指针，9 组定向测试及 50 组随机穷举对拍通过，D；10-19 复查）
+  11. `frequency_query`（10-12 哈希方向独立想到，但原稿每查询重建表、将查询值当下标；参考其他 AI 的结构及代码后修正，6 组定向及 30 组随机测试通过，C；后续轻量练习预处理与哈希查询）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-12 已完成不标分类的 shopping_pair，独立通过；10-11 两道窗口题均独立通过。范围及测试证据见训练日志。
+- 最近训练：10-12 已完成两道不标分类训练：shopping_pair 独立通过 D；frequency_query 算法方向独立识别、实现借助其他 AI，C。不要把哈希方案视作选错方向；区分平均复杂度与确定的最坏上界。范围及测试证据见训练日志。
 - 复习队列详见 `training-log.md`
