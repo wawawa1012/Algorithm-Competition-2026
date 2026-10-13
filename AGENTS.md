@@ -105,7 +105,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-10-13
-- 累计 21 题已验收：D×11（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray）、C×7（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 22 题已验收：D×12（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count）、C×7（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 待办：
@@ -122,6 +122,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   11. `frequency_query`（10-12 哈希方向独立想到，但原稿每查询重建表、将查询值当下标；参考其他 AI 的结构及代码后修正，6 组定向及 30 组随机测试通过，C；后续轻量练习预处理与哈希查询）
   12. `first_position_query`（10-13 学员确认独立完成，8 组测试通过，D；10-20 复查。作为 frequency_query 近迁移验证，静态统计查询小组练习已结束）
   13. `longest_unique_subarray`（10-13 起初不明确哈希用途与值的含义，后自行确定为窗口内频次并实现；10 组定向及 50 组随机穷举对拍通过，D；10-20 复查）
+  14. `pair_count`（10-13 学员主动追加的不标分类混合题，独立完成后缀频次哈希计数，11 组定向及 50 组随机穷举对拍通过，编译零警告，D；10-20 复查）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-13 first_position_query、longest_unique_subarray 两题均独立通过 D，完成静态预处理到动态窗口频次的延伸；下一轮安排不标分类的混合题。10-12 shopping_pair 独立通过 D，frequency_query 辅助完成 C；范围及测试证据见训练日志。
+- 最近训练：10-13 first_position_query、longest_unique_subarray 及学员主动追加的 pair_count 三题均独立通过 D，完成静态预处理、动态窗口频次及配对计数。10-12 shopping_pair 独立通过 D，frequency_query 辅助完成 C；范围及测试证据见训练日志。
 - 复习队列详见 `training-log.md`
