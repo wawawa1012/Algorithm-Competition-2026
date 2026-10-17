@@ -104,8 +104,8 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-15
-- 累计 26 题已验收：D×14（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_profit、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×9（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 日期基准：2026-10-17
+- 累计 26 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×9（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 待办：
@@ -113,7 +113,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   2. `prefix_sum_r2.cpp`（未建；病灶：忘了 long long，n×max|a[i]| 可达 1e14）
   3. `remove_duplicates_r2.cpp`（未建；病灶：把"覆盖"理解成"删除"，曾两次出错 + 一次抄写）
   4. `max_consecutive_ones`（10-08 新题，首元素未计入最大值，提示后修正；9 组测试通过，C）
-  5. `max_profit`（10-09 无提示独立完成，8 组测试通过，D；10-16 复查，间隔满 7 天仍能独立快速完成再升 E）
+  5. `max_profit`（10-17 间隔 8 天无提示独立复查通过，8 组定向及 50 组随机穷举对拍通过，升 E；自行改为单变量维护最低价，复查代码已归档）
   6. `sorted_squares`（10-09 新题，两段归并，j=0 与全负数组边界经提示修正，9 组测试通过，C；学员希望简化代码，下一步可去掉负数副本 a）
   7. `knn`（10-10~11 课堂算法练习，距离截断及简化后的 pair 投票字段取错，经提示修正；dist 仅存类别与距离平方，直接统计前 k 个类别；最终 8 组测试通过、编译零警告，C，已收尾）
   8. `max_window_sum`（10-11 无提示独立完成固定窗口和，主动使用 long long，10 组测试通过，D；10-18 复查）
@@ -128,5 +128,5 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   17. `stack_permutation`（10-15 方向及操作时机经提示，修正为每次入栈后连续匹配弹栈，12 组测试通过、编译零警告，C）
   18. `integer_sqrt`（10-15 学员主动追加并要求换题型，独立实现二分，8 组测试通过、编译零警告，D；无输出系误运行其他代码，已确认；10-22 复查）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-15 remove_adjacent_duplicates 独立通过 D，stack_permutation 提示后通过 C；学员主动换题型追加 integer_sqrt，独立通过 D，已收尾。范围及测试证据见训练日志。
+- 最近训练：10-17 max_profit 间隔 8 天独立复查通过，升 E，已归档；学员要求继续新题，安排 meeting_schedule（会议安排），尚未验收。范围及测试证据见训练日志。
 - 复习队列详见 `training-log.md`
