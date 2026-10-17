@@ -105,7 +105,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-10-17
-- 累计 26 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×9（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 27 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×10（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 待办：
@@ -127,6 +127,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   16. `remove_adjacent_duplicates`（10-15 栈专题，独立完成空栈检查、连锁消除及顺序恢复，12 组定向及 50 组随机对拍通过、编译零警告，D；10-22 复查）
   17. `stack_permutation`（10-15 方向及操作时机经提示，修正为每次入栈后连续匹配弹栈，12 组测试通过、编译零警告，C）
   18. `integer_sqrt`（10-15 学员主动追加并要求换题型，独立实现二分，8 组测试通过、编译零警告，D；无输出系误运行其他代码，已确认；10-22 复查）
+  19. `meeting_schedule`（10-17 自行想到预排序，向其他 AI 获得最早结束的贪心策略后完成，12 组定向及 50 组随机子集穷举对拍通过，C；待补算法思想：交换第一场会议不减少最优解场数，后续重复同一选择）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-17 max_profit 间隔 8 天独立复查通过，升 E，已归档；学员要求继续新题，安排 meeting_schedule（会议安排），尚未验收。范围及测试证据见训练日志。
+- 最近训练：10-17 max_profit 间隔 8 天独立复查通过，升 E，已归档；meeting_schedule 参考其他 AI 的策略后实现通过，C，今日一题复查、一题新题已完成。范围及测试证据见训练日志。
 - 复习队列详见 `training-log.md`
