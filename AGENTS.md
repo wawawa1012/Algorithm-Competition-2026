@@ -108,6 +108,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 - 累计 27 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×10（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
+- 10-17 选题调整：学员指出 min_waiting_time 是 OS 学过的 SJF，连续简单排序贪心题新增价值不足，并要求明确专题覆盖和真题时间。修好当前题后，下一道即进入官方往届真题；不以学完全部专题为前置。每 3 次正常训练至少 2 次使用真题，专题围绕真题缺口补 1-2 题后返回。核心按 12 块管理（见 training-log.md），不是官方考纲或频次统计；课堂 KNN/K-means 不计为竞赛专题覆盖。官方 2026 春季真题练习入口已核实，具体题目页目前需登录，尚未取得题面，不虚构题名或题号。
 - 待办：
   1. `valid_parentheses`（10-08 提示后修正控制流程，7 组逻辑测试通过，已归档；维持 C，后续用 `_r2.cpp` 独立重写；本次已主动检查空栈）
   2. `prefix_sum_r2.cpp`（未建；病灶：忘了 long long，n×max|a[i]| 可达 1e14）
@@ -128,6 +129,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   17. `stack_permutation`（10-15 方向及操作时机经提示，修正为每次入栈后连续匹配弹栈，12 组测试通过、编译零警告，C）
   18. `integer_sqrt`（10-15 学员主动追加并要求换题型，独立实现二分，8 组测试通过、编译零警告，D；无输出系误运行其他代码，已确认；10-22 复查）
   19. `meeting_schedule`（10-17 自行想到预排序，向其他 AI 获得最早结束的贪心策略后完成，12 组定向及 50 组随机子集穷举对拍通过，C；待补算法思想：交换第一场会议不减少最优解场数，后续重复同一选择）
+  20. `min_waiting_time`（10-17 已提交实现但尚未验收：SJF 排序和等待时间递推正确，9 组测试 7 过 2 失败；C++ 数值类型错误：sum 与返回值为 int，n=1000、全 10000 时应 4995000000，实际 700032704；待学员修正并重新测试，不计入累计已验收题数）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-17 max_profit 间隔 8 天独立复查通过，升 E，已归档；meeting_schedule 参考其他 AI 的策略后实现通过，C，今日一题复查、一题新题已完成。范围及测试证据见训练日志。
+- 最近训练：10-17 max_profit 复查升 E，meeting_schedule 策略参考后通过 C；追加 min_waiting_time 等待修正整数溢出，尚未验收。下一道转官方真题，具体专题覆盖和安排见训练日志。
 - 复习队列详见 `training-log.md`
