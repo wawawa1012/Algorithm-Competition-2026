@@ -9,9 +9,9 @@ using namespace std;
 class solution
 {
 public:
-    vector<int> range_addition(vector<pair<int,int>>& events,vector<int>& nums)
+    vector<long long> range_addition(vector<pair<int,int>>& events,vector<long long>& nums)
     {
-        vector<int> diff(nums.size());
+        vector<long long> diff(nums.size()+1);
         for (auto& event:events)
         {
             int begin=event.first;
@@ -19,7 +19,7 @@ public:
             int val=event.second;
             diff[index]+=val;
         }
-        int add=0;
+        long long add=0;
         for (int i=0;i<nums.size();i++)
         {
             add+=diff[i];
@@ -33,22 +33,22 @@ int main()
 {
     int N,Q;
     cin>>N>>Q;
-    vector<int> nums(N);
-    for (int& num:nums)
+    vector<long long> nums(N);
+    for (long long& num:nums)
     {
         cin>>num;
     }
     vector<pair<int,int>> events;
     for (int i=0;i<Q;i++)
     {
-        int r,l,x;
-        cin>>r>>l>>x;
-        events.push_back({r,x});
-        events.push_back({l,-x});
+        int l,r,x;
+        cin>>l>>r>>x;
+        events.push_back({l,x});
+        events.push_back({r+1,-x});
     }
     solution s;
-    vector<int> res=s.range_addition(events,nums);
-    for (int& val:res)
+    vector<long long> res=s.range_addition(events,nums);
+    for (long long& val:res)
     {
         cout<<val<<" ";
     }
