@@ -46,7 +46,7 @@ $clion="D:\CLion\CLion 2025.3.1.1"; $env:Path="$clion\bin\mingw\bin;$clion\bin\n
 1. 检查最近提交：`git log -1 --format="%ci"`（或看 GitHub 提交时间），判断断训天数
 2. 读 `training-log.md` 的"待复习队列"和"已暴露待补的训练点"
 3. 决定训练量（与断训天数挂钩，不要机械执行）：
-   - 正常（断训 ≤ 2 天）：1-2 题，总时长 45-90 分钟
+   - 正常（断训 ≤ 2 天）：按学员 10-18 明确要求，每天 1 道真题 + 2 道专题新题，一次只布置一道、验收后再进入下一道；不追问用时。
    - **断训 ≥ 3 天：最小日**——只给 1 题、15-20 分钟、优先学员做过的熟悉的题。这是硬性规定：不加量、不催、不讽刺
 4. 出题优先级：待复习队列 > 已暴露待补训练点 > 旧题复健（参照 Arithmetic 仓库出题面，要求学员不看旧代码重做）> 新知识点
 5. 学员写完：教练编译 + 用样例和至少 2 组边界反例测试；不要只依赖学员自测
@@ -104,11 +104,12 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-17
+- 日期基准：2026-10-18
 - 累计 28 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×11（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 10-17 选题调整：学员指出 min_waiting_time 是 OS 学过的 SJF，连续简单排序贪心题新增价值不足，并要求明确专题覆盖和真题时间。修好当前题后，下一道即进入官方往届真题；不以学完全部专题为前置。每 3 次正常训练至少 2 次使用真题，专题围绕真题缺口补 1-2 题后返回。核心按 12 块管理（见 training-log.md），不是官方考纲或频次统计；课堂 KNN/K-means 不计为竞赛专题覆盖。官方 2026 春季真题练习入口已核实，具体题目页目前需登录，尚未取得题面，不虚构题名或题号。
+- 10-18 最新训练量：学员明确要求由教练选题，每天 1 道真题 + 2 道新题，取代此前训练比例。逐题布置，真题先不标算法分类；专题新题针对真题缺口或未覆盖的重要基础，不继续重复简单排序贪心。优先 ADPC 真题，其他正式赛事题作为必要备选，不能混称 ADPC 真题。学员已说明自己的浏览器登录成功，应先定位正确的浏览器和标签页；内置浏览器的登录状态不能代表学员浏览器。
 - 待办：
   1. `valid_parentheses`（10-08 提示后修正控制流程，7 组逻辑测试通过，已归档；维持 C，后续用 `_r2.cpp` 独立重写；本次已主动检查空栈）
   2. `prefix_sum_r2.cpp`（未建；病灶：忘了 long long，n×max|a[i]| 可达 1e14）
