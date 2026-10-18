@@ -105,7 +105,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-10-18
-- 累计 28 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×11（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 29 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×12（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 10-17 选题调整：学员指出 min_waiting_time 是 OS 学过的 SJF，连续简单排序贪心题新增价值不足，并要求明确专题覆盖和真题时间。修好当前题后，下一道即进入官方往届真题；不以学完全部专题为前置。每 3 次正常训练至少 2 次使用真题，专题围绕真题缺口补 1-2 题后返回。核心按 12 块管理（见 training-log.md），不是官方考纲或频次统计；课堂 KNN/K-means 不计为竞赛专题覆盖。官方 2026 春季真题练习入口已核实，具体题目页目前需登录，尚未取得题面，不虚构题名或题号。
@@ -131,6 +131,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   18. `integer_sqrt`（10-15 学员主动追加并要求换题型，独立实现二分，8 组测试通过、编译零警告，D；无输出系误运行其他代码，已确认；10-22 复查）
   19. `meeting_schedule`（10-17 自行想到预排序，向其他 AI 获得最早结束的贪心策略后完成，12 组定向及 50 组随机子集穷举对拍通过，C；待补算法思想：交换第一场会议不减少最优解场数，后续重复同一选择）
   20. `min_waiting_time`（10-17 独立识别 SJF，排序和等待时间递推正确；经溢出反例提示将 sum 和返回值改为 long long，重新编译 9 组测试全部通过，C，已验收；下一道转官方真题）
+  21. `abc183_d_water_heater`（10-18 开始/结束双事件数组与时钟扫描由学员自行想到；经提示修正 people[n]、while 判界顺序及 currUsage 类型，14 组定向及 50 组随机逐时穷举对拍通过、编译零警告，C，已验收；教练仅统一输出 Yes/No。已应学员要求解释官方差分 O(N+T) 与本实现 O(N log N+T)，不强制重写）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-17 max_profit 复查升 E，meeting_schedule、min_waiting_time 通过 C。10-18 按每日 1 真题 + 2 新题开始，第一题为 AtCoder ABC183 D Water Heater（contests/abc183_d_water_heater.cpp），已通过 computer use 完整核实题面，尚未验收；后两题逐题安排。
+- 最近训练：10-18 第一题 AtCoder ABC183 D Water Heater 修正边界和类型后通过 C；接着安排第一道专题新题 range_addition（区间增减，差分迁移），尚未验收，今日第二道专题题待逐题安排。
 - 复习队列详见 `training-log.md`

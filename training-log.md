@@ -32,6 +32,7 @@
 | 10-15 | integer_sqrt | 自命题·整数平方根 | 二分·数值边界 | 不记录（学员要求） | 是（无算法实现提示） | **D** | 未发现算法错误；一度误运行其他程序导致误以为无输出，已确认运行目标问题 | 10-22 复查 |
 | 10-17 | meeting_schedule | 自命题·经典会议安排 | 排序·区间贪心 | 不记录（学员要求） | 预排序自行想到；最早结束策略参考其他 AI | C | 本次无实现错误；算法思想待巩固：为什么选最早结束不损失最优场数 | 待安排（穿插新题） |
 | 10-17 | min_waiting_time | 自命题·排队接水 | 排序·SJF 贪心 | 不记录（学员要求） | 算法独立识别；数值类型经提示修正 | C | C++ 数值类型：int 累加及返回总等待时间溢出；改为 long long 后 9 组测试通过 | 待安排（穿插真题） |
+| 10-18 | abc183_d_water_heater | AtCoder ABC183 D 官方真题 | 排序·开始结束事件扫描 | 不记录（学员要求） | 事件扫描方法自行想到；边界与类型经提示修正 | C | 边界条件：people[n] 越界、while 先读后判界；C++ 数值类型：当前总用量需 long long；修正后 14+50 组测试通过 | 待安排（穿插新题） |
 
 注：全部按竞赛 stdin/stdout 格式，多组测试验证通过。已归档的 v2 文件即最新版本。
 
@@ -43,7 +44,7 @@
 | 2026-10-02 | search_range / two_sum | 复查（通过升 E） |
 | 2026-10-03 | max_area / two_sum_ii | 复查（通过升 E） |
 | 2026-10-04 | maze_bfs / prefix_sum / remove_duplicates | 复查 |
-| 待安排 | valid_parentheses / max_consecutive_ones / sorted_squares / knn / frequency_query / kmeans / stack_permutation / meeting_schedule / min_waiting_time | 降低重复频率，穿插新题；后续独立重写通过再升 D |
+| 待安排 | valid_parentheses / max_consecutive_ones / sorted_squares / knn / frequency_query / kmeans / stack_permutation / meeting_schedule / min_waiting_time / abc183_d_water_heater | 降低重复频率，穿插新题；后续独立重写通过再升 D |
 | 2026-10-18 | max_window_sum / min_subarray_len | 不看资料独立复查；满 7 天仍能独立快速完成再升 E |
 | 2026-10-19 | shopping_pair | 不看资料独立复查；满 7 天仍能独立快速完成再升 E |
 | 2026-10-20 | first_position_query / longest_unique_subarray / pair_count | 不看资料独立复查；满 7 天仍能独立快速完成再升 E；按实际训练量分批安排 |
@@ -258,6 +259,25 @@
 - 为实际开始当天训练，第一道真题选 AtCoder ABC183 D Water Heater，来源 https://atcoder.jp/contests/abc183/tasks/abc183_d?lang=en ，已通过 computer use 完整核实题面、范围及三组官方样例，明确标注 AtCoder 来源，不冒称 ADPC 真题。
 - 本题输入 N、W 及 N 组 S、T、P；每人在 [S,T) 期间每分钟使用 P 升热水，供给每分钟最多 W 升且不可储存，判断全部计划是否可行。N<=200000，0<=S<T<=200000，1<=W,P<=1e9，输出 Yes/No。拟写入 contests/abc183_d_water_heater.cpp；只提供题面、不提示算法，尚未实现或验收，后两道专题新题按完成情况安排。
 - 不保存或回显报名页中的个人信息、验证码或带个人报名参数的链接。累计仍为 28 题。
+
+## 2026-10-18 ABC183 D 首次实现检查（待修）
+
+- 学员最初尝试模仿会议安排，按结束时间排序贪心；后自行否定直接套用，想到将（开始时刻，用量）和（结束时刻，用量）分别存入两个 vector，按时钟扫描维护当前总用量。核心方法由学员自行想到，不强制换成差分方案。
+- 当前按结束时刻排序 people，因此拆出的 endTime 已有序；beginTime 单独排序。每个时刻先处理所有结束事件、再处理所有开始事件，之后判断总量，符合 [S,T)；每条事件各处理一次，时间 O(N log N + maxT)，空间 O(N)，在本题范围内可行。
+- 编译 C++17、-Wall -Wextra -Wpedantic 成功，无编译警告；另启用 -D_GLIBCXX_ASSERTIONS 运行，官方样例 1、单人超量（1 1 / 0 1 2）、首尾相接（2 5 / 0 1 5 / 1 2 5）三组均触发 vector 下标断言并终止，exit=3，无正常输出。
+- 边界条件：循环上界访问 people[n]，合法末元素下标是 n-1；两个 while 在 b<n/e<n 之前访问数组，应先检查下标范围，特别是所有开始事件已处理时 b 会达到 n。
+- C++ 数值类型：currUsage 最多 2e14，int 不足，需要 long long；不因为单人用量 P<=1e9 而使用 int 保存总量。实际提交应采用题面 Yes/No 输出。
+- 学员表示真题比此前练习难一个梯度；指出本次新增的是独立建模、同时维护多人的时间事件及边界，前面简单热身偏多，不能据一道 ABC 的 D 题推断所有比赛题难度。当前思路可保留，下一步只修上述实现问题再复测，不追加题目或要求口头复述。
+- 暂不验收、不计入题数；代码保持学员版本，未代改。累计仍为 28 题。
+
+## 2026-10-18 ABC183 D 修正后验收与题解比较
+
+- 学员按提示自行将 people[n] 改为 people[n-1]，while 先判 b<n/e<n 再读取数组，currUsage 改为 long long。教练仅将输出 YES/NO 统一为官方要求的 Yes/No，没有改写算法。
+- C++17，-O2 -Wall -Wextra -Wpedantic -D_GLIBCXX_ASSERTIONS 编译零警告；14 组定向测试通过：3 组官方样例、单人恰好/超量、首尾相接、相同开始时刻、相同结束时刻、所有开始事件已耗尽后的长尾、最后一个时间段超量、32 位溢出反例、0 时刻同时开始、N=200000 全部同时用水合法/超量。50 组固定种子（20261018）随机小输入与逐时枚举所有人的参考结果一致。
+- 记 C：核心事件扫描由学员自行想到，边界和累计类型经提示修正；不因实现复杂度高于另一解法降级。累计 29 题，E 1、D 13、C 12、B 3；第一道真题已完成。
+- 学员主动问官方题解及性能差距，已核实 https://atcoder.jp/contests/abc183/editorial/343 ：官方明确认可排序开始/结束事件的模拟路线，同时利用时间上界 T<=200000 给出差分+前缀和 O(N+T) 写法。每人对 delta[S] 加 P、delta[T] 减 P，逐时累计恢复总用量。
+- 对比本实现两次排序+逐时扫描为 O(N log N+T)，额外数组 O(N)；差分写法为 O(N+T)，额外数组 O(T)。官方方法省掉排序及双指针判界；两种方法都满足本题规模。本次没有做同环境计时基准，不推断快几倍或将本地测试说成线上 AC。
+- 下一题 topics/range_addition.cpp（区间增减）：给定 N 个初始整数，Q 次对闭区间 [l,r] 加 x，输出全部最终值；N,Q<=200000，|a[i]|,|x|<=1e9，要求 O(N+Q)，样例 5 3 / 10 20 30 40 50 / 1 3 2 / 2 5 -10 / 3 3 5，输出 12 12 27 30 40。作为今天第一道专题新题，只安排此题，不预先布置第二道。
 
 ## 已暴露待补的训练点
 
