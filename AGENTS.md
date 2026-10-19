@@ -105,12 +105,13 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-18
+- 日期基准：2026-10-19
 - 累计 30 题已验收：E×1（max_profit）、D×13（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt）、C×13（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 10-17 选题调整：学员指出 min_waiting_time 是 OS 学过的 SJF，连续简单排序贪心题新增价值不足，并要求明确专题覆盖和真题时间。修好当前题后，下一道即进入官方往届真题；不以学完全部专题为前置。每 3 次正常训练至少 2 次使用真题，专题围绕真题缺口补 1-2 题后返回。核心按 12 块管理（见 training-log.md），不是官方考纲或频次统计；课堂 KNN/K-means 不计为竞赛专题覆盖。官方 2026 春季真题练习入口已核实，具体题目页目前需登录，尚未取得题面，不虚构题名或题号。
 - 10-18 最新训练量：学员明确要求由教练选题，每天 1 道真题 + 2 道新题，取代此前训练比例。逐题布置，真题先不标算法分类；专题新题针对真题缺口或未覆盖的重要基础，不继续重复简单排序贪心。优先 ADPC 真题，其他正式赛事题作为必要备选，不能混称 ADPC 真题。已通过 computer use 定位学员实际使用的另一个 Chrome，确认报名站已登录；此前连接的浏览器不同，不能据此让学员重复登录。学员明确要求不操作登录，仅查看现有页面。正确浏览器里的 OJ 真题列表仍弹出登录提示，已停止认证操作；今天先选已核实的 AtCoder ABC183 D 官方真题，待 ADPC 题面可读再优先选取。
+- 10-18 难度偏好澄清：学员明确希望保持真题挑战度，认为这种难度才能进步。说“难”不等于请求降难度；先定位卡点，保持有价值的建模和迁移训练，把新概念讲得具体、按级提示，不能自动退回 SJF 等已熟悉的简单变体。
 - 待办：
   1. `valid_parentheses`（10-08 提示后修正控制流程，7 组逻辑测试通过，已归档；维持 C，后续用 `_r2.cpp` 独立重写；本次已主动检查空栈）
   2. `prefix_sum_r2.cpp`（未建；病灶：忘了 long long，n×max|a[i]| 可达 1e14）
@@ -135,5 +136,5 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   21. `abc183_d_water_heater`（10-18 开始/结束双事件数组与时钟扫描由学员自行想到；经提示修正 people[n]、while 判界顺序及 currUsage 类型，14 组定向及 50 组随机逐时穷举对拍通过、编译零警告，C，已验收；教练仅统一输出 Yes/No。已应学员要求解释官方差分 O(N+T) 与本实现 O(N log N+T)，不强制重写）
   22. `range_addition`（10-18 在其他 AI 提示下实现差分，教练提示后自行修正 r+1、diff 多留一格及累计量 long long；修改时 main 的输入顺序和接收类型未同步，教练补齐这三行，未改写差分主体。11 组定向及 50 组随机逐项更新对拍通过，C，已验收；10-21 轻量独立复查，不把辅助完成等同于已掌握）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-18 完成真题 AtCoder ABC183 D Water Heater（C）和差分新题 range_addition（辅助后通过 C），累计 30 题。学员反映难度高并明确收工，今日结束，不追加第三题；下次降低单次新概念密度，用小例子衔接已有知识。
+- 最近训练：10-18 已验收 ABC183 D 与 range_addition，累计 30 题。10-19 正常继续，第一题选 AtCoder ABC088 D Grid Repainting（contests/abc088_d_grid_repainting.cpp），已核实官方题面，尚未验收；后两题待逐题安排。保持挑战度，用具体提示衔接知识缺口。
 - 复习队列详见 `training-log.md`
