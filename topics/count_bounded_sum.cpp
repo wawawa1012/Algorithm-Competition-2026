@@ -12,13 +12,30 @@
 #include <vector>
 using namespace std;
 
+long long count_bounded_sum(const vector<long long>& nums,long long s)
+{
+    int l=0;
+    long long tot_count=0,currSum=0;
+    for (int r=0;r<nums.size();r++)
+    {
+        currSum+=nums[r];
+        while(currSum>s)
+        {
+            currSum-=nums[l];
+            l++;
+        }
+        tot_count+=r-l+1;
+    }
+    return tot_count;
+}
+
 int main() {
     int n;
     long long s;
     cin >> n >> s;
     vector<long long> nums(n);
     for (auto& value : nums) cin >> value;
-
+    cout<<count_bounded_sum(nums,s);
     // TODO：计算并输出答案。
     return 0;
 }
