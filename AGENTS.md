@@ -106,7 +106,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-10-20
-- 累计 35 题已验收：E×1（max_profit）、D×14（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum）、C×17（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 36 题已验收：E×1（max_profit）、D×14（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum）、C×18（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 10-17 选题调整：学员指出 min_waiting_time 是 OS 学过的 SJF，连续简单排序贪心题新增价值不足，并要求明确专题覆盖和真题时间。修好当前题后，下一道即进入官方往届真题；不以学完全部专题为前置。每 3 次正常训练至少 2 次使用真题，专题围绕真题缺口补 1-2 题后返回。核心按 12 块管理（见 training-log.md），不是官方考纲或频次统计；课堂 KNN/K-means 不计为竞赛专题覆盖。官方 2026 春季真题练习入口已核实，具体题目页目前需登录，尚未取得题面，不虚构题名或题号。
@@ -140,6 +140,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   25. `island_count`（10-19 复用自己刚写的 DFS；初稿在全局用尚为 0 的 h/w 建空容器，输入尺寸后未分配而越界，经提示自行改为读入后 assign，属 C++ 容器使用/边界条件。最终自己将 DFS 入口限制为未访问空地，计数移入该分支，每区域只加一次；教练未提示或代改计数主体。10 组定向及 50 组独立 BFS 随机对拍通过、编译零警告，C；10-22 起分批独立复查）
   26. `abc229_d_longest_x`（10-20 Hint 1 获得窗口方向，首稿从两端局部贪心收缩丢最优区间；Hint 2 后改为右端递增，但左端移出未更新 dotCount；Hint 3 局部伪代码后自行补齐 while 收缩及移出扣回。12 组定向和 50 组随机穷举对拍通过，C，教练未改算法源码；10-23 起分批独立复查。学员反映看懂但写得吃力，聚焦变量含义与窗口状态维护，不空泛评价能力或自动降难度）
   27. `count_bounded_sum`（10-20 本题无额外求助，自行完成非负数组窗口计数，正确累加每个右端点的 r-l+1 个合法区间，累计和与答案主动用 long long；13 组定向及 50 组随机穷举对拍通过，D。10-27 独立复查；不据本次近迁移成功把 ABC229 D 升 D/E）
+  28. `count_exact_odds`（10-20 初稿按条件成立次数 res++，漏计多个起点、重复计同一区间及空窗口；经按右端点分组和 F(K)-F(K-1) 的集合计数解释后，学员自行完成两次至多计数及 K=0 分支。最终 int 溢出，应学员明确要求，教练仅将 k_res/m_res/res 及返回类型改为 long long，未改算法。12 组定向及 50 组随机穷举对拍通过，C；10-23 起分批独立复查。学员明确仍不理解窗口适用性及答案更新，后续观察其独立推导，不因代码通过认定理解已稳固）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-20 已验收真题 ABC229 D（C）与第一道专题 count_bounded_sum（D），累计 35 题；后者自行完成窗口计数且主动使用 long long。第二道专题新题 count_exact_odds（恰好 K 个奇数的非空连续子数组数量，含 K=0）已布置，仅题面和 IO，尚未实现或验收。待复习队列分批安排，不叠加额外题量。
+- 最近训练：10-20 已完成 1 道真题 ABC229 D（C）、2 道专题 count_bounded_sum（D）和 count_exact_odds（C），累计 36 题；最后一题数值类型由教练应要求修改。今日计划完成，不追加题目。学员指出窗口条件及 res 更新仍依赖模板，已讲按右端点分组、非负贡献的单调性、最长/至多/恰好计数的区别；后续以独立迁移检验，不把看懂或近迁移通过等同于全面掌握。待复习队列分批安排，不叠加额外题量。
 - 复习队列详见 `training-log.md`

@@ -12,12 +12,54 @@
 #include <vector>
 using namespace std;
 
+long long count_exact_odds(const vector<int>& nums,int k)
+{
+    int l=0;
+    int odd_count=0;
+    long long k_res=0;
+    for (int r=0;r<nums.size();r++)
+    {
+        if (nums[r]%2==1) odd_count++;
+        while (odd_count>k)
+        {
+            if (nums[l]%2==1)
+            {
+                odd_count--;
+            }
+            l++;
+        }
+        k_res+=r-l+1;
+    }
+    int m=k-1;
+    long long m_res=0;
+    if (m<0) m_res=0;
+    else
+    {
+        odd_count=0,l=0;
+        for (int r=0;r<nums.size();r++)
+        {
+            if (nums[r]%2==1) odd_count++;
+            while (odd_count>m)
+            {
+                if (nums[l]%2==1)
+                {
+                    odd_count--;
+                }
+                l++;
+            }
+            m_res+=r-l+1;
+        }
+    }
+    long long res=k_res-m_res;
+    return res;
+}
+
 int main() {
     int n, k;
     cin >> n >> k;
     vector<int> nums(n);
     for (auto& value : nums) cin >> value;
-
+    cout<<count_exact_odds(nums,k);
     // TODO：计算并输出答案。
     return 0;
 }
