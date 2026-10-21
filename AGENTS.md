@@ -45,6 +45,7 @@ $clion="D:\CLion\CLion 2025.3.1.1"; $env:Path="$clion\bin\mingw\bin;$clion\bin\n
 
 1. 检查最近提交：`git log -1 --format="%ci"`（或看 GitHub 提交时间），判断断训天数
 2. 读 `training-log.md` 的"待复习队列"和"已暴露待补的训练点"
+   - 按学员 10-21 新要求，先看日志顶部“当前备赛地图”，每天明确告知主专题、训练目标及所处位置；每题明确标注官方真题的赛事/题号/链接、教练自命题或复查。此要求取代旧的真题一律不标分类；混合识别训练明确说明为混合，不提前给具体解法。
 3. 决定训练量（与断训天数挂钩，不要机械执行）：
    - 正常（断训 ≤ 2 天）：按学员 10-18 明确要求，每天 1 道真题 + 2 道专题新题，一次只布置一道、验收后再进入下一道；不追问用时。
    - 学员当日明确表示收工时立即结束训练，不为凑够计划题数继续布置或催补；未完成题保存进度，下次接上。
@@ -105,13 +106,14 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-20
-- 累计 36 题已验收：E×1（max_profit）、D×14（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum）、C×18（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 日期基准：2026-10-21
+- 累计 37 题已验收：E×1（max_profit）、D×14（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum）、C×19（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
 - 10-17 选题调整：学员指出 min_waiting_time 是 OS 学过的 SJF，连续简单排序贪心题新增价值不足，并要求明确专题覆盖和真题时间。修好当前题后，下一道即进入官方往届真题；不以学完全部专题为前置。每 3 次正常训练至少 2 次使用真题，专题围绕真题缺口补 1-2 题后返回。核心按 12 块管理（见 training-log.md），不是官方考纲或频次统计；课堂 KNN/K-means 不计为竞赛专题覆盖。官方 2026 春季真题练习入口已核实，具体题目页目前需登录，尚未取得题面，不虚构题名或题号。
 - 10-18 最新训练量：学员明确要求由教练选题，每天 1 道真题 + 2 道新题，取代此前训练比例。逐题布置，真题先不标算法分类；专题新题针对真题缺口或未覆盖的重要基础，不继续重复简单排序贪心。优先 ADPC 真题，其他正式赛事题作为必要备选，不能混称 ADPC 真题。已通过 computer use 定位学员实际使用的另一个 Chrome，确认报名站已登录；此前连接的浏览器不同，不能据此让学员重复登录。学员明确要求不操作登录，仅查看现有页面。正确浏览器里的 OJ 真题列表仍弹出登录提示，已停止认证操作；今天先选已核实的 AtCoder ABC183 D 官方真题，待 ADPC 题面可读再优先选取。
 - 10-18 难度偏好澄清：学员明确希望保持真题挑战度，认为这种难度才能进步。说“难”不等于请求降难度；先定位卡点，保持有价值的建模和迁移训练，把新概念讲得具体、按级提示，不能自动退回 SJF 等已熟悉的简单变体。
+- 10-21 路线沟通修正：学员反映每日不清楚专题、已会与未练范围、是否真实原题。之后每天先说明主专题、目标和题目来源，不再一律隐藏真题分类；若混合识别，明确说是混合。12 块地图置于 training-log.md 顶部持续更新，具体模型 D/E 不等于整块专题掌握。当前主专题为前缀和/差分/扫描线的时间事件，接续基础 DP，再穿插堆、并查集、数学、答案二分；真题持续进行，不等专题全部学完才模拟。
 - 待办：
   1. `valid_parentheses`（10-08 提示后修正控制流程，7 组逻辑测试通过，已归档；维持 C，后续用 `_r2.cpp` 独立重写；本次已主动检查空栈）
   2. `prefix_sum_r2.cpp`（未建；病灶：忘了 long long，n×max|a[i]| 可达 1e14）
@@ -141,6 +143,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   26. `abc229_d_longest_x`（10-20 Hint 1 获得窗口方向，首稿从两端局部贪心收缩丢最优区间；Hint 2 后改为右端递增，但左端移出未更新 dotCount；Hint 3 局部伪代码后自行补齐 while 收缩及移出扣回。12 组定向和 50 组随机穷举对拍通过，C，教练未改算法源码；10-23 起分批独立复查。学员反映看懂但写得吃力，聚焦变量含义与窗口状态维护，不空泛评价能力或自动降难度）
   27. `count_bounded_sum`（10-20 本题无额外求助，自行完成非负数组窗口计数，正确累加每个右端点的 r-l+1 个合法区间，累计和与答案主动用 long long；13 组定向及 50 组随机穷举对拍通过，D。10-27 独立复查；不据本次近迁移成功把 ABC229 D 升 D/E）
   28. `count_exact_odds`（10-20 初稿按条件成立次数 res++，漏计多个起点、重复计同一区间及空窗口；经按右端点分组和 F(K)-F(K-1) 的集合计数解释后，学员自行完成两次至多计数及 K=0 分支。最终 int 溢出，应学员明确要求，教练仅将 k_res/m_res/res 及返回类型改为 long long，未改算法。12 组定向及 50 组随机穷举对拍通过，C；10-23 起分批独立复查。学员明确仍不理解窗口适用性及答案更新，后续观察其独立推导，不因代码通过认定理解已稳固）
+  29. `abc188_d_snuke_prime`（10-21 自行联想到事件数组，参考豆包 map 建议；曾清空结束增量、按事件数量计天数，已自行删清零行。学员明确要求后，教练保留 map 直接修正按段计费及先结算后更新顺序，16 组定向和 50 组随机逐日对拍通过、编译零警告，C；10-24 起分批独立复查。官方 2021-01-10 ABC188 D，非 ADPC，官方题解同样用排序 vector 事件，map 并非必要）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-20 已完成 1 道真题 ABC229 D（C）、2 道专题 count_bounded_sum（D）和 count_exact_odds（C），累计 36 题；最后一题数值类型由教练应要求修改。今日计划完成，不追加题目。学员指出窗口条件及 res 更新仍依赖模板，已讲按右端点分组、非负贡献的单调性、最长/至多/恰好计数的区别；后续以独立迁移检验，不把看懂或近迁移通过等同于全面掌握。待复习队列分批安排，不叠加额外题量。
+- 最近训练：10-21 首题 AtCoder ABC188 D Snuke Prime 经教练应请求修改后验收通过，C，累计 37 题；当天主专题为差分/扫描线的时间事件与按段计费。已回应原题来源与路线疑问，在 training-log.md 顶部更新 12 块专题地图及每日沟通规则。后两道专题尚未布置，本轮先解释修好的循环与路线，不要求口头复述或立即重写；到期复查按实际负荷分批，不叠加题量。
 - 复习队列详见 `training-log.md`
