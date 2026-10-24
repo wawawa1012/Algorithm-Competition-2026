@@ -107,8 +107,8 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-23
-- 累计 42 题已验收：E×1（max_profit）、D×16（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars）、C×22（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、adpc_3_autumn_a_ascension、big_integer_addition）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 日期基准：2026-10-24
+- 累计 43 题已验收：E×1（max_profit）、D×17（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply）、C×22（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、adpc_3_autumn_a_ascension、big_integer_addition）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 来源统计（10-22 纠偏）：与官方原始题面核对并验收的 ADPC 历届原题为 0 道；公开教学整理版已验收 1 道（第三届秋季 A《登神长阶》，数据可能不同）；其他赛事原题为 AtCoder 五题 ABC183 D、ABC088 D、ABC229 D、ABC188 D、ABC040 C。其余为其他题源、教练自命题、课堂练习。不得把其他赛事训练说成目标赛事历届题训练已经落实。
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
@@ -151,6 +151,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   32. `abc040_c_pillars`（10-22 其他赛事原题 AtCoder ABC040 C，非 ADPC；上学期课堂学过 DP，本次无新增算法提示自行实现一维最小代价，两前驱转移及初值正确。9 组定向和 50 组穷举路径对拍通过、编译零警告，D；此前 IO 为教练预填，不据此认定赛场全流程已独立，10-29 含 IO 复查）
   33. `adpc_3_autumn_a_ascension`（10-22～23 ADPC 第三届秋季 A 公开教学整理版，非官方原始题面。递推方向与完整 IO 自行完成，逐项取模及 m<3 初始化越界经提示自行修正；16 组定向和 50 组独立矩阵参考对拍通过、编译零警告，C；10-26 起分批复查。数值范围、高精度与分治乘法已讲解，尚无独立掌握证据）
   34. `big_integer_addition`（10-23 教练自命题。输入经 string 读入局部代码提示，字符转换、对齐与进位主体自行写出；最高位预留零经提示自行处理，至少保留一位。16 组定向及 50 组 Python 任意精度严格输出对拍全部通过，编译保留一条有符号/无符号比较警告，C；10-26 起分批复查。尚无高精度独立掌握证据，不要求为压缩数组重构）
+  35. `big_integer_multiply`（10-24 教练自命题，大整数乘普通整数。本题无新增提示，主动用 1LL 和 long long 处理中间乘积与进位，/10、%10、多留 9 位及全零输出正确。18 组定向和 50 组 Python 任意精度严格输出对拍通过，首次检查通过，D；10-31 间隔 7 天复查。独立迁移证据限本模型，不把高精度加法 C 一并升级）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-23 新一轮主专题为第 12 块基础数学，先补数值范围与高精度。big_integer_addition 经读入及前导零提示后验收 C，累计 42 题；主体加法与进位自行实现，完整输出严格对拍通过。DP 主线后续继续；复查按队列分批，不叠加题量。ADPC 资料继续经 GitHub 检索并如实标注公开整理版及来源限制。
+- 最近训练：10-24 接续完成昨日未写的 big_integer_multiply，首次检查 18+50 组通过，D，累计 43。第 12 块高精度两题短专题结束，下一题回赛事题 / DP，不追补昨日题量，也不自动扩展高精度库；薄弱旧题按队列分批复查。ADPC 题面继续经 GitHub 检索并明确公开整理版及来源限制。
 - 复习队列详见 `training-log.md`
