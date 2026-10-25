@@ -48,3 +48,36 @@
  * 自行写完整 main、读入、算法和输出。
  * 自测：官方样例和至少两组自己构造的边界反例。
  */
+#include <iostream>
+#include <math.h>
+#include <vector>
+using namespace std;
+
+int validation(const vector<int>& a,const vector<int>& b,const vector<int>& c)
+{
+    int n = a.size() - 1;
+    vector<vector<int>> dp(n + 1, vector<int>(3, 0));
+
+    dp[1][0] = a[1];
+    dp[1][1] = b[1];
+    dp[1][2] = c[1];
+    for (int i=2;i<n+1;i++)
+    {
+        dp[i][0]=max(dp[i-1][1],dp[i-1][2])+a[i];
+        dp[i][1]=max(dp[i-1][0],dp[i-1][2])+b[i];
+        dp[i][2]=max(dp[i-1][1],dp[i-1][0])+c[i];
+    }
+    return max(dp[n][0],max(dp[n][1],dp[n][2]));
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int> a(n+1,0),b(n+1,0),c(n+1,0);
+    for (int i=1;i<n+1;i++)
+    {
+        cin>>a[i]>>b[i]>>c[i];
+    }
+    cout<<validation(a,b,c);
+}
