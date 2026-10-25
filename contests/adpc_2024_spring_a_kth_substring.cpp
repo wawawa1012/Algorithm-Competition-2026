@@ -34,3 +34,38 @@
  *
  * 自行写完整程序；自测原题样例及至少两组边界反例。
  */
+#include <iostream>
+//相同内容的子串只算一种，考虑用集合存
+#include <algorithm>
+#include <unordered_set>
+#include <vector>
+using namespace std;
+
+string kth_substring(string s,int k)
+{
+    //觉得应该分两步，先是找所有子串，再是排序输出
+    unordered_set<string> st;
+    //实在没想到如何简化寻找这一步，就用双指针了
+    for (int l=0;l<s.size();l++)
+    {
+        for (int r=l;r<s.size()&&r-l+1<=k;r++)
+        {
+            string subString=s.substr(l,r-l+1);
+            st.insert(subString);
+        }
+    }
+    vector<string> v(st.begin(),st.end());
+    sort(v.begin(),v.end(),[](string a,string b)
+    {
+        return a<b;
+    });
+    return v[k-1];
+}
+
+int main()
+{
+    string s;
+    int k;
+    cin>>s>>k;
+    cout<<kth_substring(s,k);
+}
