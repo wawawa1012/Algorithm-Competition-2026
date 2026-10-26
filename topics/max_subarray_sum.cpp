@@ -29,3 +29,33 @@
  * 自行写完整 main、读入、算法和输出。
  * 自测：两个样例及至少两组自己构造的边界反例。
  */
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+long long max_subarray_sum(const vector<long long>& nums)
+{
+    int n=nums.size();
+    vector<long long> dp(n,-1000000000);
+    dp[0]=max(dp[0],nums[0]);
+    long long res=dp[0];
+    for (int i=1;i<n;i++)
+    {
+        dp[i]=max(dp[i-1]+nums[i],nums[i]);
+        res=max(dp[i],res);
+    }
+    return res;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    vector<long long> nums(n);
+    for (long long& num:nums)
+    {
+        cin>>num;
+    }
+    cout<<max_subarray_sum(nums);
+}
