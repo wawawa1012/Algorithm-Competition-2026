@@ -99,6 +99,8 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 - 学员于 10-13 要求不再追问用时；若学员主动提供则记录，不以用时确认作为验收前置。
 - 10-22 明确赛场条件：后续默认让学员自己写完整 main、读入与输出，教练不再默认预填每题 IO；必要的算法骨架须注明是训练辅助。OJ 的隐藏测试输入由系统提供，不能把人工预填 IO 当作比赛条件；秋季编辑器空模板是否提供尚未验证，不能编造。
 
+- 10-26 复习重点：学员明确“失误题重写很快，复杂逻辑题不提示写不出”。须区分实现/边界失误与建模/推导缺口；前者独立复查通过后拉长间隔，后者定位卡住的一步、分级提示并用短近迁移检验，不用机械重写熟题数代替独立建模证据，不增设口头复述门槛。
+
 ## 6. 目录约定
 
 - `recovery/` 旧题重做；`topics/` 知识点专项；`contests/` 真题与限时模拟；`templates/` 已理解的模板；`mistakes/` 典型错误
@@ -107,8 +109,8 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-25
-- 累计 47 题已验收：E×1（max_profit）、D×18（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum）、C×25（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、adpc_3_autumn_a_ascension、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 日期基准：2026-10-26
+- 累计 47 题已验收：E×1（max_profit）、D×19（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum、adpc_3_autumn_a_ascension）、C×24（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 来源统计（10-25 更新）：依据参赛者保存的原题截图核对并验收的 ADPC 历届题为 2 道（2024 春季 G《随机汉堡店》、A《送个分吧》，均未登录官方 OJ 核对）；公开教学整理版另有 1 道（第三届秋季 A《登神长阶》，数据可能不同）；其他赛事原题为 AtCoder 六题 ABC183 D、ABC088 D、ABC229 D、ABC188 D、ABC040 C、Educational DP Contest C。其余为其他题源、教练自命题、课堂练习。不得把其他赛事训练计作 ADPC 历届题，不冒充官方 OJ 已提交通过。
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
@@ -149,7 +151,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   30. `coverage_query`（10-21 本题无新增提示，首次检查通过，闭区间 r+1、D+2 数组及累计 m[i]=a[i]+m[i-1] 均正确；11 组定向及 50 组随机直接计数对拍通过，编译零警告，D；10-28 复查。学员仍自述恢复状态不熟，并混淆差分与事件关系，已用 [2,4] 的变化/状态对照说明；具体模型 D 不等于专题全面掌握）
   31. `coverage_range_query`（10-21 自行写对差分、两次顺序累计及区间相减，时间 O(N+D+Q) 达标；大边界累计人次 40000000000 超 int。教练应明确要求只将返回容器、局部 res、main 接收 res 三处改为 vector<long long>，9 组定向和 50 组随机对拍通过，C；10-24 起分批独立复查。保留算法迁移正确的证据，不因类型问题误判为算法不会）
   32. `abc040_c_pillars`（10-22 其他赛事原题 AtCoder ABC040 C，非 ADPC；上学期课堂学过 DP，本次无新增算法提示自行实现一维最小代价，两前驱转移及初值正确。9 组定向和 50 组穷举路径对拍通过、编译零警告，D；此前 IO 为教练预填，不据此认定赛场全流程已独立，10-29 含 IO 复查）
-  33. `adpc_3_autumn_a_ascension`（10-22～23 ADPC 第三届秋季 A 公开教学整理版，非官方原始题面。递推方向与完整 IO 自行完成，逐项取模及 m<3 初始化越界经提示自行修正；16 组定向和 50 组独立矩阵参考对拍通过、编译零警告，C；10-26 起分批复查。数值范围、高精度与分治乘法已讲解，尚无独立掌握证据）
+  33. `adpc_3_autumn_a_ascension`（ADPC 第三届秋季 A 公开教学整理版，非官方原题；10-22～23 逐项取模和小分钟边界经提示修正，C。10-26 无新提示完整独立重写，16 组定向与 50 组独立矩阵参考对拍通过、编译零警告，升 D，_r2 已归档；11-02 复查。实现失误已补好，不据此认定复杂建模或整块 DP 已掌握）
   34. `big_integer_addition`（10-23 教练自命题。输入经 string 读入局部代码提示，字符转换、对齐与进位主体自行写出；最高位预留零经提示自行处理，至少保留一位。16 组定向及 50 组 Python 任意精度严格输出对拍全部通过，编译保留一条有符号/无符号比较警告，C；10-26 起分批复查。尚无高精度独立掌握证据，不要求为压缩数组重构）
   35. `big_integer_multiply`（10-24 教练自命题，大整数乘普通整数。本题无新增提示，主动用 1LL 和 long long 处理中间乘积与进位，/10、%10、多留 9 位及全零输出正确。18 组定向和 50 组 Python 任意精度严格输出对拍通过，首次检查通过，D；10-31 间隔 7 天复查。独立迁移证据限本模型，不把高精度加法 C 一并升级）
   36. `adpc_2024_spring_g_burgers`（10-24 ADPC 2024 春季 G，依据参赛者原题截图，未登录官方 OJ。状态定义、前缀和与按种类合并转移经提示，朴素候选转移自行实现；best 覆盖历史最大、按种类索引容量及负哨兵范围三处由教练应要求修正，保留原 DP 主体。16 组定向、50 组原删除靠拢规则穷举随机对拍及 3 组百万规模通过、编译零警告；O(n+k)，C，10-27 起分批独立复查。学员明确 best 理解仍弱，不据代码通过认定掌握）
@@ -157,5 +159,5 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   38. `adpc_2024_spring_a_kth_substring`（10-25 ADPC 2024 春季 A，依据参赛者原题截图，未登录官方 OJ。去重与字典序排序自行实现；全子串截取哈希成本过高，Hint 2 后自行将长度限为 <=k；12 组定向、50 组全枚举随机对拍及 4 组最大规模后缀参考对拍通过，C，10-28 起分批复查。substr 与比较语法不熟已局部解释，保留算法源码未代改）
   39. `atcoder_dp_c_vacation`（10-25 其他赛事原题 AtCoder Educational DP Contest C，非 ADPC。自行发现上一天活动会影响下一天，但二维状态、初始化和 A 转移经提示；随后自行补齐 B/C 转移、末行最大值、完整调用输出及读入范围，教练未改源码。16 组定向含三官方样例与两组十万天边界、50 组独立枚举活动安排对拍通过，编译零警告；O(n)，int 最大 10^9 足够，C，10-28 起分批复查）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-25 主专题第 10 块基础 DP，完成不相邻取数 D（16+50 组通过，11-01 复查）、ADPC 2024 春季 A 送个分吧 C（枚举上界经提示，12+50+4 最大规模通过，10-28 起复查）、AtCoder Educational DP Contest C Vacation C（二维状态与 A 转移经提示，B/C 和最终取值自行补齐，16+50 组含最大规模通过，编译零警告，10-28 起复查）；累计 47。今日 1 道 ADPC 题+2 道专题新题完成，不追加第四题，不追补昨日题量；按负荷巩固状态信息和字符串枚举上界，不把带讲解通过视为独立掌握。
+- 最近训练：10-26 主专题第 10 块基础 DP，登神长阶公开教学整理版独立复查 16+50 通过，C 升 D，已归档，11-02 复查；累计仍 47（E1、D19、C24、B3）。第二题 ADPC 2024 春季 E《语言学习中》已按参赛者原题截图建题面，混合识别，未实现、未验收。复查占一个题位，之后再安排一道专题新题；学员明确失误型题重写容易、复杂逻辑题缺独立推导，后续区分 C 原因，减少已修好失误题的机械重复，聚焦建模与局部迁移验证。
 - 复习队列详见 `training-log.md`
