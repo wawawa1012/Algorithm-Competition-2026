@@ -50,3 +50,52 @@
  *
  * 自行写完整程序；自测两个样例及至少两组边界反例。
  */
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<bool> language(string S,string T,const vector<pair<int,int>>& s,const vector<pair<int,int>>& t)
+{
+    int q=s.size();
+    vector<bool> res(q);
+    vector<int> pre_sum1(S.size()+1,0);
+    vector<int> pre_sum2(T.size()+1,0);
+    for (int i=1;i<S.size()+1;i++)
+    {
+        int currNum = (S[i-1] == 'X') ? 1 : 2;
+        pre_sum1[i]=pre_sum1[i-1]+currNum;
+    }
+    for (int j=1;j<T.size()+1;j++)
+    {
+        int currNum = (T[j-1] == 'X') ? 1 : 2;
+        pre_sum2[j]=pre_sum2[j-1]+currNum;
+    }
+    for (int i=0;i<q;i++)
+    {
+        int si=pre_sum1[s[i].second]-pre_sum1[s[i].first-1];
+        int ti=pre_sum2[t[i].second]-pre_sum2[t[i].first-1];
+        res[i]=(si-ti)%3==0;
+    }
+    return res;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    string S,T;
+    int q;
+    cin>>S>>T>>q;
+    vector<pair<int,int>> s(q),t(q);
+    for (int i=0;i<q;i++)
+    {
+        cin>>s[i].first>>s[i].second>>t[i].first>>t[i].second;
+    }
+    vector<bool> res=language(S,T,s,t);
+    for (bool val:res)
+    {
+        if (val) cout<<"YES"<<'\n';
+        else cout<<"NO"<<'\n';
+    }
+}
