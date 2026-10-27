@@ -84,7 +84,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ### 4.6 反复出现的铁律（学员已多次犯错）
 
-- 任何非 void 函数，所有路径必须有 return（已犯 3 次，见 `mistakes/missing-return.md`）
+- 任何非 void 函数，所有路径必须有 return（已犯 4 次，见 `mistakes/missing-return.md`）
 - 涉及下标条件注意 off-by-one（见 `mistakes/off-by-one.md`）
 - 结果可能超过 2×10^9 时一律 `long long`
 - 预处理 = "一次构建，多次查询"（不要每次查询重建；见 `mistakes/preprocessing-and-query.md`）
@@ -109,8 +109,8 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-26
-- 累计 49 题已验收：E×1（max_profit）、D×19（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum、adpc_3_autumn_a_ascension）、C×26（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation、adpc_2024_spring_e_language、max_subarray_sum）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 日期基准：2026-10-27
+- 累计 50 题已验收：E×1（max_profit）、D×19（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum、adpc_3_autumn_a_ascension）、C×27（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation、adpc_2024_spring_e_language、max_subarray_sum、same_color_ordered_pair）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 来源统计（10-26 更新）：依据参赛者保存的原题截图核对并验收的 ADPC 历届题为 3 道（2024 春季 G《随机汉堡店》、A《送个分吧》、E《语言学习中》，均未登录官方 OJ 核对）；公开教学整理版另有 1 道（第三届秋季 A《登神长阶》，数据可能不同）；其他赛事原题为 AtCoder 六题 ABC183 D、ABC088 D、ABC229 D、ABC188 D、ABC040 C、Educational DP Contest C。其余为其他题源、教练自命题、课堂练习。不得把其他赛事训练计作 ADPC 历届题，不冒充官方 OJ 已提交通过。
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
@@ -160,6 +160,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   39. `atcoder_dp_c_vacation`（10-25 其他赛事原题 AtCoder Educational DP Contest C，非 ADPC。自行发现上一天活动会影响下一天，但二维状态、初始化和 A 转移经提示；随后自行补齐 B/C 转移、末行最大值、完整调用输出及读入范围，教练未改源码。16 组定向含三官方样例与两组十万天边界、50 组独立枚举活动安排对拍通过，编译零警告；O(n)，int 最大 10^9 足够，C，10-28 起分批复查）
   40. `adpc_2024_spring_e_language`（10-26 ADPC 2024 春季 E，依据参赛者原题截图，未登录官方 OJ。统一表示经提示，自行采用 H=2/X=1 的余数判定；在前缀和方向提示后自行完成一次建表和区间相减。14 组定向、50 组原规则图小规模随机询问及百万询问精确输出通过，O(|S|+|T|+q)，C，10-29 起分批复查；教练仅补快速 IO，将本机最大用例含 IO 时间由约 3.821 秒降至 0.364 秒。方法识别仍需独立验证）
   41. `max_subarray_sum`（10-26 教练自命题。初稿将负数跳过导致不连续；经“必须以 i 结尾”的状态、合法候选与全局答案提示后自行修正，long long 与完整 IO 自行完成。16 组定向与 50 组独立非空区间穷举对拍通过，编译零警告，O(n) 时间/空间，教练未改算法源码；C，10-29 起分批复查。维度由状态含义决定，再估算各维乘积；末尾最优不能直接当全局最优）
+  42. `same_color_ordered_pair`（10-27 教练自命题，汉堡店 best 的短近迁移。按颜色维护此前最大 a 的状态经提示，先查后更和历史最大自行实现；空标记撞边界、无解返回与输出曾出错，最后判空常量同步和 main 输出变量两行由教练应要求修正。16 组定向及 50 组独立有序配对穷举对拍通过、编译零警告，O(n+k)，C，10-30 起分批复查；尚不据此认定独立候选压缩或升级汉堡店）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-26 完成登神长阶独立复查升 D（11-02 复查）、ADPC 2024 春季 E 语言学习中 C（统一表示与前缀和方向经提示，14+50+百万询问通过，教练仅补快速 IO）、最大连续子数组和 C（末尾状态经提示，自行修正转移及全局答案，16+50 组含最大规模通过，编译零警告）；累计 49（E1、D19、C26、B3）。两道新 C 于 10-29 起分批复查。今日三题完成，复查占一题位，不加第四题；继续区分实现失误与建模推导缺口，提示只补卡住的一步。
+- 最近训练：10-27 主专题第 6 块按类别维护信息、衔接 DP 候选优化；同色有序配对在 best 状态提示后自行实现先查后更，最后判空与输出变量两行由教练应要求修正，16+50 组含最大规模通过，编译零警告，C，10-30 起分批复查；累计 50（E1、D19、C27、B3），不自动升级汉堡店。第二题已建 ADPC 2024 春季 H《密码是多少？》，依据原题截图及参赛记录样例补充说明，混合识别，未实现、未验收；复查按负荷嵌入今天三个题位。
 - 复习队列详见 `training-log.md`
