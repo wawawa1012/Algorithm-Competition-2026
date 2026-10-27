@@ -32,3 +32,33 @@
  *
  * 自行写完整程序；自测两个样例和至少两组自己构造的边界反例。
  */
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+string password(string s)
+{
+    int n=s.size();
+    vector<int> pw(n);
+    for (int i=0;i<n-3;i++)
+    {
+        pw[i]=s[i+3];
+    }
+    pw[n-3]=s[0];
+    pw[n-2]=s[1];
+    pw[n-1]=s[2];
+    string res;
+    for (int i=0;i<n;i++)
+    {
+        res.append(to_string(pw[i]));
+    }
+    return res;
+}
+int main()
+{
+    string s;
+    cin>>s;
+    cout<<password(s);
+}
