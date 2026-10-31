@@ -39,3 +39,40 @@
  * 自行写完整 main、读入、算法和输出，不预填骨架。
  * 自测两个样例及至少两组边界，比如 K=1、K=N。
  */
+#include <queue>
+#include <vector>
+#include <iostream>
+#include <functional>
+using namespace std;
+
+vector<int> res;
+void prefix_kth_max(const vector<int>& p,int k)
+{
+    int n=p.size();
+    vector<int> pk(k);
+    for (int i=0;i<k;i++)
+    {
+        pk[i]=p[i];
+    }
+    priority_queue<int,vector<int>,greater<int>> pq(pk.begin(),pk.end());
+    res.push_back(pq.top());
+    for (int i=k;i<n;i++)
+    {
+        pq.push(p[i]);
+        if (pq.size()>k) pq.pop();
+        res.push_back(pq.top());
+    }
+}
+
+int main()
+{
+    int N,K;
+    cin>>N>>K;
+    vector<int> P(N);
+    for (int& num:P)
+    {
+        cin>>num;
+    }
+    prefix_kth_max(P,K);
+    for (int& num:res) cout<<num<< endl;
+}
