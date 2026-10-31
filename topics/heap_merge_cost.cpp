@@ -37,11 +37,7 @@ using namespace std;
 long long heap_merge_cost(const vector<int>& a)
 {
     long long cost_res=0;
-    priority_queue<long long,vector<long long>,greater<>> pq;
-    for (int num:a)
-    {
-        pq.push(num);
-    }
+    priority_queue<long long,vector<long long>,greater<>> pq(a.begin(),a.end());
     while (pq.size()!=1)
     {
         long long numA=pq.top();
