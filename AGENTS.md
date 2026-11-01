@@ -109,7 +109,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-10-31
+- 日期基准：2026-11-01
 - 累计 54 题已验收：E×1（max_profit）、D×22（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum、adpc_3_autumn_a_ascension、adpc_2024_spring_h_password、longest_increasing_run、abc234_d_prefix_kth_max）、C×28（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation、adpc_2024_spring_e_language、max_subarray_sum、same_color_ordered_pair、heap_merge_cost）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 来源统计（10-31 更新）：依据参赛者保存的原题截图核对并验收的 ADPC 历届题为 4 道（2024 春季 G《随机汉堡店》、A《送个分吧》、E《语言学习中》、H《密码是多少？》，均未登录官方 OJ 核对，H 的 ASCII 拼接解释另参照同页样例）；公开教学整理版另有 1 道（第三届秋季 A《登神长阶》，数据可能不同）；其他赛事原题为 AtCoder 七题 ABC183 D、ABC088 D、ABC229 D、ABC188 D、ABC040 C、Educational DP Contest C、ABC234 D。其余为其他题源、教练自命题、课堂练习。不得把其他赛事训练计作 ADPC 历届题，不冒充官方 OJ 已提交通过。
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
@@ -155,7 +155,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   34. `big_integer_addition`（10-23 教练自命题。输入经 string 读入局部代码提示，字符转换、对齐与进位主体自行写出；最高位预留零经提示自行处理，至少保留一位。16 组定向及 50 组 Python 任意精度严格输出对拍全部通过，编译保留一条有符号/无符号比较警告，C；10-26 起分批复查。尚无高精度独立掌握证据，不要求为压缩数组重构）
   35. `big_integer_multiply`（10-24 教练自命题，大整数乘普通整数。本题无新增提示，主动用 1LL 和 long long 处理中间乘积与进位，/10、%10、多留 9 位及全零输出正确。18 组定向和 50 组 Python 任意精度严格输出对拍通过，首次检查通过，D；10-31 间隔 7 天复查。独立迁移证据限本模型，不把高精度加法 C 一并升级）
   36. `adpc_2024_spring_g_burgers`（10-24 ADPC 2024 春季 G，依据参赛者原题截图，未登录官方 OJ。状态定义、前缀和与按种类合并转移经提示，朴素候选转移自行实现；best 覆盖历史最大、按种类索引容量及负哨兵范围三处由教练应要求修正，保留原 DP 主体。16 组定向、50 组原删除靠拢规则穷举随机对拍及 3 组百万规模通过、编译零警告；O(n+k)，C，10-27 起分批独立复查。学员明确 best 理解仍弱，不据代码通过认定掌握）
-  37. `non_adjacent_max_sum`（10-25 教练自命题，不相邻取数。本题无新增提示，独立完成含完整 IO 的前缀 DP，空选、单元素、负数及 long long 均正确；16 组定向和 50 组独立子集穷举对拍通过，D；编译两条有符号/无符号比较警告不阻断验收，未修改源码，11-01 独立复查）
+  37. `non_adjacent_max_sum`（10-25 教练自命题，不相邻取数。本题无新增提示，独立完成含完整 IO 的前缀 DP，空选、单元素、负数及 long long 均正确；16 组定向和 50 组独立子集穷举对拍通过，D；编译两条有符号/无符号比较警告不阻断验收，未修改源码，11-01 复查递推主体正确，单元素初始化越界由教练应要求补一行，16+50 通过并归档，维持历史 D、不升 E，11-08 再独立复查）
   38. `adpc_2024_spring_a_kth_substring`（10-25 ADPC 2024 春季 A，依据参赛者原题截图，未登录官方 OJ。去重与字典序排序自行实现；全子串截取哈希成本过高，Hint 2 后自行将长度限为 <=k；12 组定向、50 组全枚举随机对拍及 4 组最大规模后缀参考对拍通过，C，10-28 起分批复查。substr 与比较语法不熟已局部解释，保留算法源码未代改）
   39. `atcoder_dp_c_vacation`（10-25 其他赛事原题 AtCoder Educational DP Contest C，非 ADPC。自行发现上一天活动会影响下一天，但二维状态、初始化和 A 转移经提示；随后自行补齐 B/C 转移、末行最大值、完整调用输出及读入范围，教练未改源码。16 组定向含三官方样例与两组十万天边界、50 组独立枚举活动安排对拍通过，编译零警告；O(n)，int 最大 10^9 足够，C，10-28 起分批复查）
   40. `adpc_2024_spring_e_language`（10-26 ADPC 2024 春季 E，依据参赛者原题截图，未登录官方 OJ。统一表示经提示，自行采用 H=2/X=1 的余数判定；在前缀和方向提示后自行完成一次建表和区间相减。14 组定向、50 组原规则图小规模随机询问及百万询问精确输出通过，O(|S|+|T|+q)，C，10-29 起分批复查；教练仅补快速 IO，将本机最大用例含 IO 时间由约 3.821 秒降至 0.364 秒。方法识别仍需独立验证）
@@ -166,5 +166,5 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   45. `heap_merge_cost`（10-31 教练自命题，直接规定每次合并最小两堆的堆操作入门版。学员仍参考小根堆声明，取出两次、合并入堆、累计费用与 long long 主体自行完成；14 组定向及 50 组独立反复排序随机对拍通过、编译零警告。O(n log n) 时间、O(n) 空间，参考声明记 C，11-03 起轻量独立复查；不据此认定已独立识别或证明最优合并贪心。学员主动提出整体建堆，已解释 O(n) 建堆与整题 O(n log n) 的区别）
   46. `abc234_d_prefix_kth_max`（10-31 其他赛事原题 AtCoder ABC234 D，非 ADPC。无新增状态/更新提示，自行用小根堆保留前缀最大的 K 个数、先插入后淘汰最小值、堆顶作第 K 大，完整 IO 自行完成；16 组定向含两官方样例和两组 50 万规模、50 组独立前缀排序随机对拍通过。编译一条符号比较警告不影响验收，未改源码，时间 O(N log(K+1))，当前含输入和答案总空间 O(N)，D，11-07 复查；不据此升级合并果子或整个堆专题）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：10-31 学员主动继续堆专题，ABC234 D 前缀第 K 大无新增状态提示独立完成，16+50 含 50 万规模精确输出通过，D，11-07 复查。今日完成最长连续递增段 D、按规则合并果子 C、ABC234 D D；累计 54（E1、D22、C28、B3），其他赛事已验收 7 道，ADPC 统计不变。未改正确源码，不自动追加第四题。带间隔题继续暂停，汉堡店仍 C。
+- 最近训练：11-01 不相邻取数复查已验收：递推主体自行完成，n=1 初始化越界由教练应要求补 if(n==1)return dp[0] 一行；16 组定向及 50 组独立子集穷举对拍通过、编译零警告，r2 已归档覆盖正式文件并删除。维持历史 D，本轮不升 E，11-08 再完整独立复查。累计仍 54（E1、D22、C28、B3）。该复查占今日一个题位，接下来回到堆新题与 ADPC，当前尚未另布题；带间隔题继续暂停。
 - 复习队列详见 `training-log.md`

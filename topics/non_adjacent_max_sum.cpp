@@ -1,5 +1,5 @@
 /*
- * 不相邻取数
+ * 不相邻取数（2026-11-01 间隔 7 天独立复查）
  * 来源：教练自命题（经典模型的独立题面），不是 ADPC 历届原题。
  * 专题：备赛地图第 10 块，基础动态规划；练习自行定义状态与转移。
  *
@@ -29,31 +29,32 @@
  * 样例 2 输出：
  * 0
  *
- * 自行写完整 main、读入、算法和输出。
+ * 不看旧代码或答案，自行写完整 main、读入、算法和输出。
  * 自测：两个样例 + 至少两组边界反例。
  */
 
 #include <iostream>
 #include <vector>
 using namespace std;
-long long non_adjacent_max(const vector<int>& a)
+
+long long adjacent_max_sum(const vector<int>& a)
 {
-    vector<long long>dp(a.size(),0);
-    dp[1]=max(0,a[1]);
-    for (int i=2;i<a.size();i++)
+    int n=a.size();
+    vector<long long> dp(n);
+    dp[0]=max(0,a[0]);
+    if (n==1) return dp[0];
+    dp[1]=max(dp[0],max(a[1],0)+0ll);
+    for (int i=2;i<n;i++)
     {
-        dp[i]=max(dp[i-1],dp[i-2]+max(a[i],0));
+        dp[i]=max(dp[i-1],dp[i-2]+max(0,a[i]));
     }
-    return dp[a.size()-1];
+    return dp[n-1];
 }
 int main()
 {
     int n;
     cin>>n;
-    vector<int> a(n+1,0);
-    for (int i=1;i<a.size();i++)
-    {
-        cin>>a[i];
-    }
-    cout<<non_adjacent_max(a);
+    vector<int> a(n);
+    for (int& num:a) cin>>num;
+    cout<<adjacent_max_sum(a);
 }
