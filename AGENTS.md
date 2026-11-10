@@ -103,6 +103,8 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 - 11-10 本届秋季赛指南已核对：https://m.saikr.com/contest/notice_detail/50362 （当天发布）。11-14 13:00–18:00 测试、11-15 同时段正式赛；两天中午 12 点开放登录，其余时间不支持。手机+电脑双机位，手机须拍清屏幕和上半身；身份证/学生证核验。允许本地编译器，但须关闭自动补全及模板；禁止搜索引擎。手机支架是固定机位的建议，指南未指定必须购买。通知群 1051895778。后续据本届指南说明要求，不沿用旧届推测，不操作登录。
 
+- 11-10 补全与资料：本届指南要求关闭自动补全及模板，包含普通补全、整行建议及 Live Templates 的展开；不要把要求缩成仅禁 AI。赛事主页组委会 11-06 回复允许任意纸质参考资料，可打印/手写语法速查表。日常练习中 i+Tab 补 include 不等于获得算法提示，独立模型保持和无补全环境适应分别记录，不强迫为此重做已通过的题。
+
 ## 6. 目录约定
 
 - `recovery/` 旧题重做；`topics/` 知识点专项；`contests/` 真题与限时模拟；`templates/` 已理解的模板；`mistakes/` 典型错误
@@ -112,7 +114,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
 - 日期基准：2026-11-10
-- 累计 55 题已验收：E×1（max_profit）、D×23（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum、adpc_3_autumn_a_ascension、adpc_2024_spring_h_password、longest_increasing_run、abc234_d_prefix_kth_max、abc141_d_discount_tickets）、C×28（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation、adpc_2024_spring_e_language、max_subarray_sum、same_color_ordered_pair、heap_merge_cost）、B×3（subarray_sum、eval_rpn、maze_bfs）
+- 累计 55 题已验收：E×2（max_profit、abc141_d_discount_tickets）、D×22（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum、adpc_3_autumn_a_ascension、adpc_2024_spring_h_password、longest_increasing_run、abc234_d_prefix_kth_max）、C×28（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation、adpc_2024_spring_e_language、max_subarray_sum、same_color_ordered_pair、heap_merge_cost）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 来源统计（11-01 更新）：依据参赛者保存的原题截图核对并验收的 ADPC 历届题为 4 道（2024 春季 G《随机汉堡店》、A《送个分吧》、E《语言学习中》、H《密码是多少？》，均未登录官方 OJ 核对，H 的 ASCII 拼接解释另参照同页样例）；公开教学整理版另有 1 道（第三届秋季 A《登神长阶》，数据可能不同）；其他赛事原题为 AtCoder 八题 ABC183 D、ABC088 D、ABC229 D、ABC188 D、ABC040 C、Educational DP Contest C、ABC234 D、ABC141 D。其余为其他题源、教练自命题、课堂练习。不得把其他赛事训练计作 ADPC 历届题，不冒充官方 OJ 已提交通过。
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
 - 10-11 备赛安排：学员明确以 ADPC 秋季赛好成绩为首要目标，要求直接进入下一题，不把补注释或口头复述作为进入下一题的前置。采用短专题（同方法 2-3 题）+ 不标算法分类的混合限时训练 + 官方历届真题；按无提示独立通过题数、耗时及错误调整难度，避免无关联地跳题。
@@ -167,7 +169,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   44. `longest_increasing_run`（10-31 教练自命题、重启最小日。无新增提示自行完成完整程序，严格比较、断段重置为 1、首元素及每轮全局最大维护正确；14 组定向及 50 组独立区间穷举随机对拍通过、编译零警告，O(n) 时间、扫描额外 O(1) 空间，当前输入数组 O(n)，D，11-07 复查。本模型独立完成不自动升级其他连续区间题）
   45. `heap_merge_cost`（10-31 教练自命题，直接规定每次合并最小两堆的堆操作入门版。学员仍参考小根堆声明，取出两次、合并入堆、累计费用与 long long 主体自行完成；14 组定向及 50 组独立反复排序随机对拍通过、编译零警告。O(n log n) 时间、O(n) 空间，参考声明记 C，11-03 起轻量独立复查；不据此认定已独立识别或证明最优合并贪心。学员主动提出整体建堆，已解释 O(n) 建堆与整题 O(n log n) 的区别）
   46. `abc234_d_prefix_kth_max`（10-31 其他赛事原题 AtCoder ABC234 D，非 ADPC。无新增状态/更新提示，自行用小根堆保留前缀最大的 K 个数、先插入后淘汰最小值、堆顶作第 K 大，完整 IO 自行完成；16 组定向含两官方样例和两组 50 万规模、50 组独立前缀排序随机对拍通过。编译一条符号比较警告不影响验收，未改源码，时间 O(N log(K+1))，当前含输入和答案总空间 O(N)，D，11-07 复查；不据此升级合并果子或整个堆专题）
-  47. `abc141_d_discount_tickets`（11-01 其他赛事原题 AtCoder ABC141 D，非 ADPC。无新增算法提示，自行用大根堆反复将当前最大价除以 2 后放回，最后求总价，完整程序自行完成；16 组定向含四官方样例和两组最大规模、50 组独立枚举优惠券分配随机对拍通过，编译零警告，D，11-08 复查。现有弹堆求和时间 O((N+M)log(N+1))、空间 O(N) 达标；按学员精简疑问解释可维护总价、省去最后弹堆遍历，不强制重构，未改源码）
+  47. `abc141_d_discount_tickets`（11-01 其他赛事原题 AtCoder ABC141 D，非 ADPC。无新增算法提示，自行用大根堆反复将当前最大价除以 2 后放回，最后求总价，完整程序自行完成；16 组定向含四官方样例和两组最大规模、50 组独立枚举优惠券分配随机对拍通过，编译零警告，D，11-08 复查。现有弹堆求和时间 O((N+M)log(N+1))、空间 O(N) 达标；按学员精简疑问解释可维护总价、省去最后弹堆遍历，不强制重构，未改源码；11-10 间隔 9 天无算法/实现提示完整重写，16+50 通过、编译零警告，升 E，r2 已归档；学员使用普通 include 补全，模型保持与关闭补全后的赛场适应分开，后者尚未验证）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：11-10 学员久未练题后询问赛前恢复与手机支架，最近提交仍 11-01。按断训最小日，今天若编码只一道熟悉题 15–20 分钟，不机械补欠题；本轮仅做设备/赛规核对，尚未布题或验收。已读取组委会 11-10 本届指南 50362，确认双机位、证件、测试/正式时间和本地编译器限制，细节与来源已记 training-log。先试摆第二机位，之后恢复熟悉模型、短混合训练、11-14 官方测试；累计仍 55（E1、D23、C28、B3），不追责或保证奖项，带间隔题继续暂停。
+- 最近训练：11-10 最小日完成 ABC141 D 折扣券独立复查，间隔 9 天无新增算法/实现提示，16 组定向及 50 组独立券分配穷举对拍通过、编译零警告，升 E，r2 已归档删除。累计仍 55（E2、D22、C28、B3）。学员使用普通 i+Tab 补 include，按模型独立保持接受，但关闭补全后的完整键入适应尚未验证；已确认本届须关闭补全/模板，允许纸质语法资料，现提供设置方向，今天不追加题。带间隔题继续暂停。
 - 复习队列详见 `training-log.md`

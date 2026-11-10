@@ -1,10 +1,11 @@
 /*
- * AtCoder ABC141 D — Powerful Discount Tickets（强力折扣券）
+ * AtCoder ABC141 D — Powerful Discount Tickets（11-10 独立复查）
  * 来源：其他赛事原题，非 ADPC 原题。
  * 官方题面：https://atcoder.jp/contests/abc141/tasks/abc141_d?lang=en
  * 已核对官方规则、范围及样例，未在官方 OJ 提交。
  * 专题：备赛地图第 8 块，堆的动态最值应用。
- * 本次自行判断优惠券的分配策略、堆中存什么及如何更新。
+ * 11-10 重启最小日：今日唯一一题，15–20 分钟恢复手感。
+ * 不看旧代码或题解，自行完成完整程序；不要求照搬上次的精简写法。
  *
  * 有 N 件商品，第 i 件原价为 A[i]；你有 M 张折扣券。
  * 一件原价 X 的商品若使用 Y 张券，最终价格为 floor(X / 2^Y)。
@@ -46,22 +47,22 @@
  * 自测官方样例及至少两组自己的边界；同时检查时间与数值范围。
  */
 
-#include <vector>
 #include <iostream>
 #include <queue>
+#include <vector>
 using namespace std;
 
-long long discount_tickets(const vector<int>& a,int m)
+long long discount_ticket(const vector<int>& a,int m)
 {
     int n=a.size();
     long long res=0;
-    priority_queue<long long> pq(a.begin(),a.end());
+    priority_queue<int> pq(a.begin(),a.end());
     for (int i=0;i<m;i++)
     {
-        int currMax=pq.top();
-        currMax=currMax/2;
+        int curr=pq.top();
+        curr=curr/2;
         pq.pop();
-        pq.push(currMax);
+        pq.push(curr);
     }
     for (int i=0;i<n;i++)
     {
@@ -73,12 +74,13 @@ long long discount_tickets(const vector<int>& a,int m)
 
 int main()
 {
-    int N,M;
-    cin>>N>>M;
-    vector<int> A(N);
-    for (int& num:A)
+    int n,m;
+    cin>>n>>m;
+    vector<int> a(n);
+    for (int& num:a)
     {
-        cin>>num;
+       cin>>num;
     }
-    cout<<discount_tickets(A,M);
+    long long res=discount_ticket(a,m);
+    cout<<res;
 }
