@@ -46,3 +46,39 @@
  * 自己选择方法，写完整 main、读入、算法和输出。
  * 自测三个官方样例和至少两组边界，可查语法表。
  */
+#include <iostream>
+#include <vector>
+#include <map>
+using namespace std;
+
+long long green_bin(const vector<string>& s)
+{
+    int n=s.size();
+    map<vector<int>,int> mp;
+    for (int i=0;i<n;i++)
+    {
+        vector<int> currStr(26);
+        for (int j=0;j<10;j++)
+        currStr[s[i][j]-'a']++;
+        mp[currStr]++;
+    }
+    long long res=0;
+    for (auto& p:mp)
+    {
+        int val=p.second;
+        res+=1ll*val*(val-1)/2;
+    }
+    return res;
+}
+
+int main()
+{
+    int N;
+    cin>>N;
+    vector<string> s(N);
+    for (int i=0;i<N;i++)
+    {
+        cin>>s[i];
+    }
+    cout<<green_bin(s);
+}
