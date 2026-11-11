@@ -40,3 +40,38 @@
  *
  * 写完整程序，自测三个样例和至少两组边界；可查语法表。
  */
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+bool traveling(const vector<int>& x,const vector<int>& y,const vector<int>& t)
+{
+    bool res=true;
+    int n=x.size();
+    //降维
+    vector<int> place(n,0);
+    for (int i=1;i<n;i++)
+    {
+        place[i]=x[i]+y[i];
+    }
+    for (int i=1;i<n;i++)
+    {
+        int distance = abs(x[i]-x[i-1]) + abs(y[i]-y[i-1]);
+        if (abs(place[i]-place[i-1])%2!=(t[i]-t[i-1])%2||(t[i]-t[i-1])<distance) res=false;
+    }
+    return res;
+}
+
+int main()
+{
+    int N;
+    cin>>N;
+    vector<int> x(N+1,0),y(N+1,0),t(N+1,0);
+    for (int i=1;i<N+1;i++)
+    {
+        cin>>t[i]>>x[i]>>y[i];
+    }
+    if (traveling(x,y,t)) cout<<"Yes";
+    else cout<<"No";
+}
