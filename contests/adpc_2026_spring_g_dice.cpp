@@ -29,3 +29,55 @@
  *
  * 自己写完整程序，检查两个存档样例和至少两组边界。
  */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <set>
+using namespace std;
+
+vector<int> g_dice(const vector<int> & a,const vector<int> & b)
+{
+    set<int> A,B;
+    //去重
+    for (int i=0;i<6;i++)
+    {
+        if (a[i]==6) A.insert(9);
+        if (b[i]==6) B.insert(9);
+        A.insert(a[i]);
+        B.insert(b[i]);
+    }
+    set<int> res;
+    for (auto& x: A)
+    {
+        for (auto& y:B)
+        {
+            res.insert(10*x+y);
+        }
+    }
+    for (auto& x: B)
+    {
+        for (auto& y:A)
+        {
+            res.insert(10*x+y);
+        }
+    }
+    vector<int> v(res.begin(),res.end());
+    return v;
+}
+
+int main()
+{
+    int n;
+    vector<int> a(6),b(6);
+    for (int i=0;i<6;i++)
+    {
+        cin>>a[i];
+    }
+    for (int i=0;i<6;i++)
+    {
+        cin>>b[i];
+    }
+    vector<int> res=g_dice(a,b);
+    for (int v:res) cout<<v<<" ";
+}
