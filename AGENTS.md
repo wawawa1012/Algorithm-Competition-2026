@@ -113,7 +113,7 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
 
 ## 7. 当前进度快照（每次训练后请由教练更新）
 
-- 日期基准：2026-11-12
+- 日期基准：2026-11-14
 - 累计 60 题已验收：E×2（max_profit、abc141_d_discount_tickets）、D×23（search_range、two_sum、sort_warmup、max_area、two_sum_ii、max_window_sum、min_subarray_len、shopping_pair、first_position_query、longest_unique_subarray、pair_count、remove_adjacent_duplicates、integer_sqrt、count_bounded_sum、coverage_query、abc040_c_pillars、big_integer_multiply、non_adjacent_max_sum、adpc_3_autumn_a_ascension、adpc_2024_spring_h_password、longest_increasing_run、abc234_d_prefix_kth_max、adpc_2026_spring_g_dice）、C×32（remove_duplicates、prefix_sum、valid_parentheses、max_consecutive_ones、sorted_squares、knn、frequency_query、kmeans、stack_permutation、meeting_schedule、min_waiting_time、abc183_d_water_heater、range_addition、abc088_d_grid_repainting、maze_reachable、island_count、abc229_d_longest_x、count_exact_odds、abc188_d_snuke_prime、coverage_range_query、big_integer_addition、adpc_2024_spring_g_burgers、adpc_2024_spring_a_kth_substring、atcoder_dp_c_vacation、adpc_2024_spring_e_language、max_subarray_sum、same_color_ordered_pair、heap_merge_cost、abc085_c_otoshidama、abc098_c_attention、abc086_c_traveling、abc137_c_green_bin）、B×3（subarray_sum、eval_rpn、maze_bfs）
 - 来源统计（11-12 更新）：依据参赛者保存的原题截图核对并验收的 ADPC 历届题为 4 道（2024 春季 G《随机汉堡店》、A《送个分吧》、E《语言学习中》、H《密码是多少？》，均未登录官方 OJ 核对，H 的 ASCII 拼接解释另参照同页样例）；参赛者文本存档另验收 1 道（2026 春季 G《骰子示数》，未与官方 OJ 核对），ADPC 历届合计 5 道；公开教学整理版另有 1 道（第三届秋季 A《登神长阶》，数据可能不同）；其他赛事原题为 AtCoder 十二题 ABC183 D、ABC088 D、ABC229 D、ABC188 D、ABC040 C、Educational DP Contest C、ABC234 D、ABC141 D、ABC085 C、ABC098 C、ABC086 C、ABC137 C。其余为其他题源、教练自命题、课堂练习。不得把其他赛事训练计作 ADPC 历届题，不冒充官方 OJ 已提交通过。
 - 最新偏好：10-08 学员主动追加两道新题，要求降低 C 级题目重复频率；穿插新题、一次布置一道，复习日期待安排。
@@ -176,5 +176,5 @@ A 完全不会 / B 有思路写不出 / C 能写但需提示或 bug 多 / D 独�
   51. `abc137_c_green_bin`（11-12 其他赛事原题 AtCoder ABC137 C，非 ADPC。字母频次数组归类与组合数框架已完成；map/unordered_map 的 vector<int> 键支持询问豆包，未看小抄；int 中间乘法溢出经提示后自行加 1ll 修正。16 组定向含三官方样例和四组 5 万/10 万规模、50 组独立排序后逐对枚举随机对拍通过，编译零警告；O(N log N) 时间/O(N) 空间，C，11-14 起短复查/近迁移。）
   52. `adpc_2026_spring_g_dice`（11-12 ADPC 2026 春季 G，参赛者文本存档，未与官方 OJ 核对。无新增算法或实现提示，自行用 set 处理 6/9、两骰左右顺序及去重升序，完整 IO 正确；16 组定向及 50 组独立 0..99 整数扫描对拍通过，保留一条无用变量警告。固定规模至多 98 次组合尝试，D，11-19 独立复查；不因枚举朴素要求重写，不据此升级其他约束枚举模型。）
 - 断训记录：09-29 后停摆，10-04 短暂启动未完成，10-08 完成一题复习、一题新题；10-09 已完成 max_profit、sorted_squares 两道新题
-- 最近训练：11-12 Green Bin 验收 C 后，学员主动恢复 ADPC 历届训练。2026 春季 G《骰子示数》无提示完成，16+50 通过，D；已解释最多 98 次枚举适合本题，不要求为“土方法”重构。累计 60（E2、D23、C32、B3），ADPC 历届验收 5（截图 4、参赛者文本 1），教学版 1、其他赛事 12。接续 contests/adpc_2026_spring_f_set_xor.cpp，2026 春季 F《集合异或》，同源参赛者存档、未官方 OJ 核验，规则/范围/两样例已实际核对并独立验证；只给题面与异或定义，无解法或 IO 骨架，未实现、未验收。固定窗口/带间隔题暂停，纸质表未改，2024 春季 B 歧义仍未解决。
+- 最近训练：11-14 学员说明 F 未做，明日比赛，询问比赛具体形式。F 保留未实现未验收，先暂停新题，按重新核对的本届官方指南安排今天 13:00–18:00 自愿测试场，熟悉账号、双机位与提交判题；明日 11-15 同时段正式赛。10 题 ACM，通过才计分，可改后重交，按解题数和用时排名，不编造固定罚时或部分分。未操作登录；下一步唯一优先动作是本人走完测试流程，不因未做 F 追责或突击新算法。累计仍 60（E2、D23、C32、B3），ADPC 历届 5、教学版 1、其他赛事 12；暂停题与纸质表保持原样，2024 春季 B 歧义仍未解决。
 - 复习队列详见 `training-log.md`
